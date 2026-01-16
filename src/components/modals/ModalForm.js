@@ -63,7 +63,7 @@ export default function ModalForm({ isOpen, setIsOpen }) {
         <AnimatePresence>
             {isOpen && (
                 <motion.div
-                    className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-2 sm:p-4"
+                    className="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-50 p-3 sm:p-4 md:p-6 pt-20 sm:pt-24 md:pt-28 pb-4 sm:pb-6 md:pb-8"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -71,7 +71,7 @@ export default function ModalForm({ isOpen, setIsOpen }) {
                 >
                     {/* Modal */}
                     <motion.div
-                        className="bg-black p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl w-full max-w-md relative border-2 border-white m-0 sm:m-2 md:m-4 max-h-[95vh] sm:max-h-[90vh] overflow-y-auto"
+                        className="bg-gradient-to-br from-[#0a0a0f] via-[#1a1a2e] to-[#0a0a0f] p-5 sm:p-6 md:p-8 rounded-2xl w-full max-w-md relative border border-white/20 shadow-2xl max-h-[calc(100vh-120px)] sm:max-h-[calc(100vh-140px)] md:max-h-[calc(100vh-160px)] overflow-y-auto flex flex-col scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent"
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -81,86 +81,101 @@ export default function ModalForm({ isOpen, setIsOpen }) {
                         {/* Close button */}
                         <button
                             onClick={() => setIsOpen(false)}
-                            className="absolute top-2 right-2 sm:top-3 sm:right-3 text-white text-xl sm:text-2xl cursor-pointer w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors min-h-[44px] min-w-[44px]"
+                            className="absolute top-3 right-3 sm:top-4 sm:right-4 text-white text-xl sm:text-2xl cursor-pointer w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full hover:bg-white/20 transition-all min-h-[44px] min-w-[44px] z-10"
                             aria-label="Close"
                         >
                             ✕
                         </button>
 
-                        <div className="text-center mb-4 sm:mb-5 md:mb-6 pr-6 sm:pr-8">
-                            <h1 className="text-white text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 leading-tight">
+                        <div className="text-center mb-5 sm:mb-6 md:mb-8 pr-8 sm:pr-10">
+                            <h1 className="text-white text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 leading-tight">
                                 ИЗ-ЗА УСЛОВИЙ NDA МЫ НЕ МОЖЕМ РАЗГЛАШАТЬ ВСЕ ДЕТАЛИ
                             </h1>
-                            <p className="text-white text-xs sm:text-sm leading-relaxed">
+                            <p className="text-white/90 text-sm sm:text-base leading-relaxed">
                                 Если вас заинтересовал данный кейс, оставьте свои данные. Наш
                                 специалист перезвонит Вам в{" "}
-                                <span className="underline">течение 1 рабочего дня</span> и проконсультирует по всем вопросам.
+                                <span className="text-blue-400 font-semibold underline">течение 1 рабочего дня</span> и проконсультирует по всем вопросам.
                             </p>
                         </div>
 
                         {/* Forma */}
-                        <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Имя"
-                                value={formData.name}
-                                onChange={handleInputChange}
-                                className="w-full px-4 py-3 sm:py-3.5 bg-transparent border-2 border-white/30 rounded-lg text-white text-sm sm:text-base placeholder-white/70 focus:border-white focus:outline-none min-h-[44px]"
-                                required
-                            />
+                        <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 flex-1">
+                            <div>
+                                <label className="block text-sm sm:text-base font-medium mb-2 text-white">Имя <span className="text-red-400">*</span></label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Введите ваше имя"
+                                    value={formData.name}
+                                    onChange={handleInputChange}
+                                    className="w-full px-4 py-3 sm:py-4 bg-[#1a1a2e] border-2 border-white/20 rounded-xl text-white text-sm sm:text-base placeholder-white/40 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 min-h-[48px] transition-all"
+                                    required
+                                />
+                            </div>
 
-                            <input
-                                type="tel"
-                                name="phone"
-                                placeholder="+7 (999) 999-99-99"
-                                value={formData.phone}
-                                onChange={handleInputChange}
-                                className="w-full px-4 py-3 sm:py-3.5 bg-transparent border-2 border-white/30 rounded-lg text-white text-sm sm:text-base placeholder-white/70 focus:border-white focus:outline-none min-h-[44px]"
-                                required
-                            />
+                            <div>
+                                <label className="block text-sm sm:text-base font-medium mb-2 text-white">Телефон <span className="text-red-400">*</span></label>
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    placeholder="+998 (___) ___-__-__"
+                                    value={formData.phone}
+                                    onChange={handleInputChange}
+                                    className="w-full px-4 py-3 sm:py-4 bg-[#1a1a2e] border-2 border-white/20 rounded-xl text-white text-sm sm:text-base placeholder-white/40 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 min-h-[48px] transition-all"
+                                    required
+                                />
+                            </div>
 
-                            <input
-                                type="text"
-                                name="telegram"
-                                placeholder="Ваш телеграм"
-                                value={formData.telegram}
-                                onChange={handleInputChange}
-                                className="w-full px-4 py-3 sm:py-3.5 bg-transparent border-2 border-white/30 rounded-lg text-white text-sm sm:text-base placeholder-white/70 focus:border-white focus:outline-none min-h-[44px]"
-                            />
+                            <div>
+                                <label className="block text-sm sm:text-base font-medium mb-2 text-white">Ваш телеграм</label>
+                                <input
+                                    type="text"
+                                    name="telegram"
+                                    placeholder="@username"
+                                    value={formData.telegram}
+                                    onChange={handleInputChange}
+                                    className="w-full px-4 py-3 sm:py-4 bg-[#1a1a2e] border-2 border-white/20 rounded-xl text-white text-sm sm:text-base placeholder-white/40 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 min-h-[48px] transition-all"
+                                />
+                            </div>
 
-                            <input
-                                type="url"
-                                name="website"
-                                placeholder="Ссылка на Ваш сайт или социальные сети"
-                                value={formData.website}
-                                onChange={handleInputChange}
-                                className="w-full px-4 py-3 sm:py-3.5 bg-transparent border-2 border-white/30 rounded-lg text-white text-sm sm:text-base placeholder-white/70 focus:border-white focus:outline-none min-h-[44px]"
-                            />
+                            <div>
+                                <label className="block text-sm sm:text-base font-medium mb-2 text-white">Ссылка на Ваш сайт или социальные сети</label>
+                                <input
+                                    type="url"
+                                    name="website"
+                                    placeholder="https://example.com"
+                                    value={formData.website}
+                                    onChange={handleInputChange}
+                                    className="w-full px-4 py-3 sm:py-4 bg-[#1a1a2e] border-2 border-white/20 rounded-xl text-white text-sm sm:text-base placeholder-white/40 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 min-h-[48px] transition-all"
+                                />
+                            </div>
 
-                            <textarea
-                                name="comment"
-                                placeholder="Комментарий"
-                                value={formData.comment}
-                                onChange={handleInputChange}
-                                rows={3}
-                                className="w-full px-4 py-3 bg-transparent border-2 border-white/30 rounded-lg text-white text-sm sm:text-base placeholder-white/70 focus:border-white focus:outline-none resize-none min-h-[80px]"
-                            />
+                            <div>
+                                <label className="block text-sm sm:text-base font-medium mb-2 text-white">Комментарий</label>
+                                <textarea
+                                    name="comment"
+                                    placeholder="Ваш комментарий..."
+                                    value={formData.comment}
+                                    onChange={handleInputChange}
+                                    rows={4}
+                                    className="w-full px-4 py-3 sm:py-4 bg-[#1a1a2e] border-2 border-white/20 rounded-xl text-white text-sm sm:text-base placeholder-white/40 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 resize-none min-h-[100px] transition-all"
+                                />
+                            </div>
 
                             <button
                                 type="submit"
-                                className="w-full bg-white text-black font-bold py-3 sm:py-3.5 rounded-lg hover:bg-gray-100 transition min-h-[48px] text-sm sm:text-base"
+                                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold py-3 sm:py-4 rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all min-h-[48px] text-sm sm:text-base shadow-lg hover:shadow-xl"
                             >
                                 ОСТАВИТЬ ЗАЯВКУ
                             </button>
                         </form>
 
-                        <p className="text-white/70 text-[10px] sm:text-xs mt-3 sm:mt-4 leading-relaxed">
+                        <p className="text-white/60 text-xs sm:text-sm mt-4 sm:mt-5 leading-relaxed text-center">
                             Заполняя форму, вы соглашаетесь с обработкой своих персональных данных в
                             соответствии с{" "}
-                            <span className="underline cursor-pointer">
-                политикой конфиденциальности
-              </span>
+                            <span className="text-blue-400 underline cursor-pointer hover:text-blue-300">
+                                политикой конфиденциальности
+                            </span>
                             .
                         </p>
                     </motion.div>
