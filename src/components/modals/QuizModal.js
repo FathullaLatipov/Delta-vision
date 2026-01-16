@@ -82,14 +82,14 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
     }} />
 
     return (
-        <div className="fixed inset-0 bg-white/5 backdrop-blur-md flex items-center justify-center z-50 p-2 sm:p-4">
-            <Card className="w-full max-w-lg bg-black text-white rounded-xl sm:rounded-2xl shadow-lg max-h-[95vh] sm:max-h-[90vh] overflow-hidden flex flex-col">
-                <CardHeader className="relative border-b border-gray-700 p-4 sm:p-6 flex-shrink-0">
-                    <CardTitle className="text-base sm:text-lg md:text-xl pr-8">Квиз: Получите бесплатный разбор</CardTitle>
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-2 sm:p-4" onClick={(e) => e.target === e.currentTarget && (setIsOpen(false), setExternalIsOpen?.(false))}>
+            <Card className="w-full max-w-lg bg-[#0a0a0f] text-white rounded-xl sm:rounded-2xl shadow-2xl border border-white/20 max-h-[95vh] sm:max-h-[90vh] overflow-hidden flex flex-col" onClick={(e) => e.stopPropagation()}>
+                <CardHeader className="relative border-b border-white/20 bg-[#1a1a2e] p-4 sm:p-6 flex-shrink-0">
+                    <CardTitle className="text-base sm:text-lg md:text-xl pr-8 text-white font-bold">Квиз: Получите бесплатный разбор</CardTitle>
                     <Button
                         variant="ghost"
                         size="sm"
-                        className="absolute right-2 top-2 cursor-pointer w-8 h-8 sm:w-10 sm:h-10 min-h-[44px] min-w-[44px]"
+                        className="absolute right-2 top-2 cursor-pointer w-8 h-8 sm:w-10 sm:h-10 min-h-[44px] min-w-[44px] hover:bg-white/20 text-white"
                         onClick={() => {
                             setIsOpen(false)
                             if (setExternalIsOpen) setExternalIsOpen(false)
@@ -99,11 +99,11 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                     </Button>
                 </CardHeader>
 
-                <CardContent className="space-y-4 sm:space-y-5 md:space-y-6 mt-3 sm:mt-4 md:mt-5 p-4 sm:p-6 overflow-y-auto flex-1">
+                <CardContent className="space-y-4 sm:space-y-5 md:space-y-6 mt-3 sm:mt-4 md:mt-5 p-4 sm:p-6 overflow-y-auto flex-1 bg-[#0a0a0f]">
                     {/* Step 1 */}
                     {step === 1 && (
                         <div className="space-y-3 sm:space-y-4">
-                            <p className="font-semibold text-sm sm:text-base">1. Выберите формат Вашего бизнеса</p>
+                            <p className="font-semibold text-sm sm:text-base md:text-lg text-white mb-2">1. Выберите формат Вашего бизнеса</p>
                             <div className="grid gap-2 sm:gap-3 grid-cols-1">
                                 {[
                                     "Розничная торговля",
@@ -116,7 +116,7 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                     "Государственная организация",
                                     "Производство",
                                 ].map((opt) => (
-                                    <label key={opt} className="flex items-start space-x-2 sm:space-x-3 cursor-pointer p-2 sm:p-2.5 rounded-lg hover:bg-white/5 transition-colors min-h-[48px]">
+                                    <label key={opt} className="flex items-start space-x-3 sm:space-x-4 cursor-pointer p-3 sm:p-4 rounded-lg bg-[#1a1a2e] border border-white/10 hover:bg-[#252540] hover:border-white/30 transition-all min-h-[56px]">
                                         <input
                                             type="radio"
                                             name="businessFormat"
@@ -129,15 +129,15 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                             className={`w-5 h-5 sm:w-6 sm:h-6 shrink-0 rounded-full border-2 flex items-center justify-center transition mt-0.5 min-h-[44px] min-w-[44px]
                     ${
                                                 answers.businessFormat === opt
-                                                    ? "border-white shadow-[0_0_8px_2px_rgba(255,255,255,0.8)] bg-white"
-                                                    : "border-gray-400"
+                                                    ? "border-white bg-white shadow-[0_0_12px_3px_rgba(59,130,246,0.6)]"
+                                                    : "border-white/60 bg-transparent"
                                             }`}
                                         >
                   {answers.businessFormat === opt && (
-                      <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-black"></span>
+                      <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#0a0a0f]"></span>
                   )}
                 </span>
-                                        <span className="text-xs sm:text-sm break-words flex-1 leading-relaxed">{opt}</span>
+                                        <span className="text-sm sm:text-base break-words flex-1 leading-relaxed text-white">{opt}</span>
                                     </label>
                                 ))}
                             </div>
@@ -157,7 +157,7 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                     {/* Step 2 */}
                     {step === 2 && (
                         <div className="space-y-3 sm:space-y-4">
-                            <p className="font-semibold text-sm sm:text-base">
+                            <p className="font-semibold text-sm sm:text-base md:text-lg text-white mb-2">
                                 2. Что Вы ждете от SMM-продвижения или Контекстной рекламы?
                             </p>
                             <div className="grid gap-2 sm:gap-3 grid-cols-1">
@@ -172,7 +172,7 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                     "Настроить воронку продаж  в социальных сетях и на сайте",
                                     "Создание воронки с помощью ботов/чат-ботов",
                                 ].map((opt) => (
-                                    <label key={opt} className="flex items-start space-x-2 sm:space-x-3 cursor-pointer p-2 sm:p-2.5 rounded-lg hover:bg-white/5 transition-colors min-h-[48px]">
+                                    <label key={opt} className="flex items-start space-x-3 sm:space-x-4 cursor-pointer p-3 sm:p-4 rounded-lg bg-[#1a1a2e] border border-white/10 hover:bg-[#252540] hover:border-white/30 transition-all min-h-[56px]">
                                         <input
                                             type="checkbox"
                                             name="expectations"
@@ -182,18 +182,18 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                             className="hidden"
                                         />
                                         <span
-                                            className={`w-5 h-5 sm:w-6 sm:h-6 shrink-0 rounded-full border-2 flex items-center justify-center transition mt-0.5 min-h-[44px] min-w-[44px]
+                                            className={`w-5 h-5 sm:w-6 sm:h-6 shrink-0 rounded border-2 flex items-center justify-center transition mt-0.5 min-h-[44px] min-w-[44px]
                     ${
                                                 answers.expectations.includes(opt)
-                                                    ? "border-white shadow-[0_0_8px_2px_rgba(255,255,255,0.8)] bg-white"
-                                                    : "border-gray-400"
+                                                    ? "border-white bg-white shadow-[0_0_12px_3px_rgba(59,130,246,0.6)]"
+                                                    : "border-white/60 bg-transparent"
                                             }`}
                                         >
                   {answers.expectations.includes(opt) && (
-                      <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-black"></span>
+                      <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-[#0a0a0f]"></span>
                   )}
                 </span>
-                                        <span className="text-xs sm:text-sm break-words flex-1 leading-relaxed">{opt}</span>
+                                        <span className="text-sm sm:text-base break-words flex-1 leading-relaxed text-white">{opt}</span>
                                     </label>
                                 ))}
                             </div>
@@ -220,13 +220,13 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                     {/* Step 3 */}
                     {step === 3 && (
                         <div className="space-y-3 sm:space-y-4">
-                            <p className="font-semibold text-sm sm:text-base">
+                            <p className="font-semibold text-sm sm:text-base md:text-lg text-white mb-2">
                                 3. Какой бюджет в месяц Вы готовы инвестировать?
                             </p>
                             <div className="grid gap-2 sm:gap-3 grid-cols-1">
                                 {["До $1000", "От $1000 до $2000", "От $2000 до $5000", "От $5000 и выше"].map(
                                     (opt) => (
-                                        <label key={opt} className="flex items-start space-x-2 sm:space-x-3 cursor-pointer p-2 sm:p-2.5 rounded-lg hover:bg-white/5 transition-colors min-h-[48px]">
+                                        <label key={opt} className="flex items-start space-x-3 sm:space-x-4 cursor-pointer p-3 sm:p-4 rounded-lg bg-[#1a1a2e] border border-white/10 hover:bg-[#252540] hover:border-white/30 transition-all min-h-[56px]">
                                             <input
                                                 type="radio"
                                                 name="budget"
@@ -239,28 +239,28 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                                 className={`w-5 h-5 sm:w-6 sm:h-6 shrink-0 rounded-full border-2 flex items-center justify-center transition mt-0.5 min-h-[44px] min-w-[44px]
                       ${
                                                     answers.budget === opt
-                                                        ? "border-white shadow-[0_0_8px_2px_rgba(255,255,255,0.8)] bg-white"
-                                                        : "border-gray-400"
+                                                        ? "border-white bg-white shadow-[0_0_12px_3px_rgba(59,130,246,0.6)]"
+                                                        : "border-white/60 bg-transparent"
                                                 }`}
                                             >
                     {answers.budget === opt && (
-                        <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-black"></span>
+                        <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#0a0a0f]"></span>
                     )}
                   </span>
-                                            <span className="text-xs sm:text-sm break-words flex-1 leading-relaxed">{opt}</span>
+                                            <span className="text-sm sm:text-base break-words flex-1 leading-relaxed text-white">{opt}</span>
                                         </label>
                                     )
                                 )}
                             </div>
                             <div>
-                                <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
+                                <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2 text-white">
                                     Ваш сайт или соцсети (необязательно)
                                 </label>
                                 <input
                                     type="text"
                                     value={answers.website}
                                     onChange={(e) => handleChange("website", e.target.value)}
-                                    className="w-full bg-transparent border border-white/50 rounded-md p-2.5 sm:p-3 text-white text-sm sm:text-base placeholder-white/50 min-h-[44px]"
+                                    className="w-full bg-[#1a1a2e] border border-white/30 rounded-lg p-2.5 sm:p-3 text-white text-sm sm:text-base placeholder-white/40 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/20 min-h-[44px]"
                                     placeholder="https://..."
                                 />
                             </div>
@@ -287,26 +287,26 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                     {/* Step 4 */}
                     {step === 4 && (
                         <div className="space-y-3 sm:space-y-4">
-                            <p className="font-semibold text-sm sm:text-base">4. Оставьте ваши контакты:</p>
+                            <p className="font-semibold text-sm sm:text-base md:text-lg text-white mb-2">4. Оставьте ваши контакты:</p>
 
                             <div>
-                                <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Ваше имя</label>
+                                <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2 text-white">Ваше имя</label>
                                 <input
                                     type="text"
                                     value={answers.name}
                                     onChange={(e) => handleChange("name", e.target.value)}
-                                    className="w-full bg-transparent border border-white/50 rounded-md p-2.5 sm:p-3 text-white text-sm sm:text-base placeholder-white/50 min-h-[44px]"
+                                    className="w-full bg-[#1a1a2e] border border-white/30 rounded-lg p-2.5 sm:p-3 text-white text-sm sm:text-base placeholder-white/40 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/20 min-h-[44px]"
                                     placeholder="Введите имя"
                                 />
                             </div>
 
                             <div>
-                                <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Телефон</label>
+                                <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2 text-white">Телефон</label>
                                 <input
                                     type="tel"
                                     value={answers.phone}
                                     onChange={(e) => handleChange("phone", e.target.value)}
-                                    className="w-full bg-transparent border border-white/50 rounded-md p-2.5 sm:p-3 text-white text-sm sm:text-base placeholder-white/50 min-h-[44px]"
+                                    className="w-full bg-[#1a1a2e] border border-white/30 rounded-lg p-2.5 sm:p-3 text-white text-sm sm:text-base placeholder-white/40 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/20 min-h-[44px]"
                                     placeholder="+998 (___) ___-__-__"
                                 />
                             </div>
@@ -332,14 +332,14 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                     )}
 
                     {/* Progress bar */}
-                    <div className="mt-4 sm:mt-5 md:mt-6 pt-3 sm:pt-4 border-t border-gray-700">
-                        <div className="w-full bg-gray-700 h-1.5 sm:h-2 rounded-full overflow-hidden">
+                    <div className="mt-4 sm:mt-5 md:mt-6 pt-3 sm:pt-4 border-t border-white/20">
+                        <div className="w-full bg-[#1a1a2e] h-2 sm:h-2.5 rounded-full overflow-hidden">
                             <div
-                                className="neon-progress"
+                                className="bg-gradient-to-r from-blue-500 to-blue-600 h-full transition-all duration-500 rounded-full"
                                 style={{ width: `${progress}%` }}
                             ></div>
                         </div>
-                        <p className="text-xs sm:text-sm text-gray-400 mt-1.5 sm:mt-2 text-right">
+                        <p className="text-xs sm:text-sm text-white/80 mt-2 sm:mt-2.5 text-right font-medium">
                             {progress}% завершено
                         </p>
                     </div>
