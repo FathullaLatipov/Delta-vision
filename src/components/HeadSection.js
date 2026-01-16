@@ -29,10 +29,10 @@ export const HeadSection = () => {
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/80"></div>
                     {/* Animated gradient orb */}
                     <motion.div
-                        className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-radial opacity-30 blur-3xl"
+                        className="absolute top-1/4 right-1/4 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-gradient-radial opacity-20 sm:opacity-30 blur-3xl"
                         animate={{
                             scale: [1, 1.2, 1],
-                            opacity: [0.3, 0.5, 0.3],
+                            opacity: [0.2, 0.4, 0.2],
                         }}
                         transition={{
                             duration: 8,
@@ -43,10 +43,10 @@ export const HeadSection = () => {
                 </div>
 
                 {/* Hero Content */}
-                <div className="relative z-10 px-6 py-20 md:py-32 pt-32">
+                <div className="relative z-10 px-4 sm:px-6 py-12 sm:py-16 md:py-24 lg:py-32 pt-24 sm:pt-28 md:pt-32">
                     <div className="mx-auto max-w-4xl text-center">
                         <motion.h1 
-                            className="text-4xl md:text-6xl lg:text-7xl font-bold font-sans leading-tight mb-8"
+                            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-sans leading-tight mb-4 sm:mb-6 md:mb-8 px-2"
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
@@ -55,7 +55,7 @@ export const HeadSection = () => {
                         </motion.h1>
 
                         <motion.p 
-                            className="text-lg md:text-xl lg:text-2xl text-gray-300 font-sans max-w-2xl mx-auto mb-12 leading-relaxed"
+                            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-300 font-sans max-w-2xl mx-auto mb-6 sm:mb-8 md:mb-12 leading-relaxed px-4"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
@@ -64,50 +64,37 @@ export const HeadSection = () => {
                         </motion.p>
 
                         <motion.div 
-                            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                            className="flex flex-col gap-3 sm:gap-4 justify-center items-center px-4"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
                         >
                             <motion.a
                                 href="#contact"
-                                className='cursor-pointer group hidden md:block'
+                                className='cursor-pointer group w-full sm:w-auto'
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
                                 <Button
-                                    size="lg"
-                                    className="bg-white text-black hover:bg-white/90 px-8 py-6 text-base md:text-lg font-semibold rounded-full cursor-pointer shadow-glow hover:shadow-glow-lg transition-all duration-300 group"
+                                    className="bg-white text-black hover:bg-white/90 w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg font-semibold rounded-full cursor-pointer shadow-glow hover:shadow-glow-lg transition-all duration-300 group"
                                 >
-                                    Получить коммерческое предложение
-                                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                                </Button>
-                            </motion.a>
-                            <motion.a
-                                href="#contact"
-                                className='cursor-pointer group block md:hidden'
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                <Button
-                                    className="bg-white text-black hover:bg-white/90 text-base md:text-lg font-semibold rounded-full cursor-pointer shadow-glow hover:shadow-glow-lg transition-all duration-300 group"
-                                >
-                                    Получить коммерческое предложение
-                                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                                    <span className="hidden sm:inline">Получить коммерческое предложение</span>
+                                    <span className="sm:hidden">Коммерческое предложение</span>
+                                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                                 </Button>
                             </motion.a>
 
                             <motion.div
+                                className="w-full sm:w-auto"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
                                 <Button
                                     variant='dark'
-                                    size="lg"
-                                    className="px-8 py-6 text-lg font-semibold rounded-full hover-gradient cursor-pointer shadow-glow hover:shadow-glow-lg transition-all duration-300 group"
+                                    className="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg font-semibold rounded-full hover-gradient cursor-pointer shadow-glow hover:shadow-glow-lg transition-all duration-300 group"
                                 >
                                     Заказать экспертный аудит
-                                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                                 </Button>
                             </motion.div>
                         </motion.div>

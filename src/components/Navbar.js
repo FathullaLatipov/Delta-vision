@@ -25,7 +25,7 @@ export const Navbar = () => {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-            className={`fixed top-0 left-0 right-0 z-50 px-6 py-4 transition-all duration-500 ${
+            className={`fixed top-0 left-0 right-0 z-50 px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 transition-all duration-500 ${
                 scrolled
                     ? "glass-strong border-b border-white/20 shadow-glow"
                     : "bg-transparent"
@@ -38,10 +38,10 @@ export const Navbar = () => {
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-premium shadow-glow group-hover:shadow-glow-lg transition-all duration-300">
-                        <Sparkles className="h-5 w-5 text-white" />
+                    <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-xl bg-gradient-premium shadow-glow group-hover:shadow-glow-lg transition-all duration-300">
+                        <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                     </div>
-                    <span className="text-xl font-bold font-sans bg-gradient-to-r from-white via-accent-light to-primary bg-clip-text text-transparent">
+                    <span className="text-base sm:text-lg md:text-xl font-bold font-sans bg-gradient-to-r from-white via-accent-light to-primary bg-clip-text text-transparent">
                         DELTA VISION
                     </span>
                 </motion.div>
@@ -120,7 +120,7 @@ export const Navbar = () => {
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                        className="md:hidden mt-4 rounded-2xl glass-strong border border-white/20 shadow-glow-lg p-4 space-y-3 overflow-hidden"
+                        className="md:hidden mt-3 rounded-xl sm:rounded-2xl glass-strong border border-white/20 shadow-glow-lg p-3 sm:p-4 space-y-2 sm:space-y-3 overflow-hidden"
                     >
                         {[
                             { label: "Главная", href: "#" },
@@ -132,7 +132,7 @@ export const Navbar = () => {
                             <motion.a
                                 key={item.label}
                                 href={item.href}
-                                className="flex flex-row text-white text-base font-medium transition-all duration-300 neon-white py-2"
+                                className="flex flex-row text-white text-sm sm:text-base font-medium transition-all duration-300 neon-white py-2.5 sm:py-2 min-h-[44px] items-center"
                                 onClick={() => setMenuOpen(false)}
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
@@ -151,13 +151,13 @@ export const Navbar = () => {
                         >
                             <a 
                                 href="tel:+998200007934" 
-                                className="block text-white hover:text-primary transition-colors font-medium text-center py-2"
+                                className="block text-white hover:text-primary transition-colors font-medium text-center py-3 sm:py-2 min-h-[44px] flex items-center justify-center"
                             >
                                 +998 20 000 79 34
                             </a>
                             <Button
                                 variant="dark"
-                                className="rounded-full py-5 cursor-pointer w-full shadow-glow hover:shadow-glow-lg transition-all duration-300"
+                                className="rounded-full py-4 sm:py-5 cursor-pointer w-full shadow-glow hover:shadow-glow-lg transition-all duration-300 text-sm sm:text-base min-h-[48px]"
                                 onClick={() => {
                                     window.open('https://t.me/islamzaripov24', '_blank')
                                     setMenuOpen(false)

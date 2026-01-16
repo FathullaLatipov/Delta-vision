@@ -17,22 +17,22 @@ const logos = [
 
 export const ClientLogos = () => {
     return (
-        <div className="relative z-10 md:px-6 pb-20">
+        <div className="relative z-10 px-3 sm:px-4 md:px-6 pb-12 sm:pb-16 md:pb-20">
             <div className="mx-auto max-w-full">
                 <div className="overflow-hidden">
                     <motion.div 
-                        className="flex animate-scroll gap-12"
+                        className="flex animate-scroll gap-6 sm:gap-8 md:gap-12"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
                         {/* First set of logos */}
-                        <div className="flex items-center gap-12 shrink-0">
+                        <div className="flex items-center gap-6 sm:gap-8 md:gap-12 shrink-0">
                             {logos.map((logo, idx) => (
                                 <motion.div
                                     key={idx}
-                                    className="h-16 w-auto flex items-center justify-center"
+                                    className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto flex items-center justify-center"
                                     whileHover={{ scale: 1.2 }}
                                     transition={{ duration: 0.3 }}
                                 >
@@ -41,18 +41,18 @@ export const ClientLogos = () => {
                                         alt={`Client logo ${idx + 1}`}
                                         width={120}
                                         height={60}
-                                        className="h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                                        className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
                                     />
                                 </motion.div>
                             ))}
                         </div>
 
                         {/* Duplicate set for seamless loop */}
-                        <div className="flex items-center gap-12 shrink-0">
+                        <div className="flex items-center gap-6 sm:gap-8 md:gap-12 shrink-0">
                             {logos.map((logo, idx) => (
                                 <motion.div
                                     key={`dup-${idx}`}
-                                    className="h-16 w-auto flex items-center justify-center"
+                                    className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto flex items-center justify-center"
                                     whileHover={{ scale: 1.2 }}
                                     transition={{ duration: 0.3 }}
                                 >
@@ -61,7 +61,7 @@ export const ClientLogos = () => {
                                         alt={`Client logo duplicate ${idx + 1}`}
                                         width={120}
                                         height={60}
-                                        className="h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                                        className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
                                     />
                                 </motion.div>
                             ))}

@@ -60,11 +60,11 @@ export default function AuditFormBlock() {
     }
 
     return (
-        <section id='contact' className="scroll-mt-20 relative py-16 sm:py-20 overflow-hidden">
+        <section id='contact' className="scroll-mt-20 relative py-10 sm:py-14 md:py-16 lg:py-20 overflow-hidden">
             {/* Background gradient */}
             <div className="absolute inset-0 bg-gradient-radial opacity-20 pointer-events-none"></div>
 
-            <div className="mx-auto max-w-7xl px-4 relative z-10">
+            <div className="mx-auto max-w-7xl px-3 sm:px-4 md:px-6 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30, scale: 0.95 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -73,11 +73,11 @@ export default function AuditFormBlock() {
                     className="mx-auto"
                 >
                     {/* Card with background color */}
-                    <div className="rounded-3xl bg-gradient-to-br from-blue-900/30 via-blue-800/20 to-indigo-900/30 border border-blue-500/30 shadow-glow-lg backdrop-blur-xl overflow-hidden">
+                    <div className="rounded-2xl sm:rounded-3xl bg-gradient-to-br from-blue-900/30 via-blue-800/20 to-indigo-900/30 border border-blue-500/30 shadow-glow-lg backdrop-blur-xl overflow-hidden">
                         {/* Pitch */}
-                        <div className="p-8 sm:p-12 space-y-6">
+                        <div className="p-4 sm:p-6 md:p-8 lg:p-12 space-y-4 sm:space-y-5 md:space-y-6">
                             <motion.p 
-                                className="text-white text-2xl sm:text-4xl font-bold leading-tight"
+                                className="text-white text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -86,7 +86,7 @@ export default function AuditFormBlock() {
                                 ВКЛАДЫВАЕТЕ ДЕНЬГИ В САЙТ, НО У ВАС НЕТ ПРОДАЖ?
                             </motion.p>
                             <motion.p 
-                                className="text-gray-300 text-lg sm:text-xl leading-relaxed"
+                                className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -98,7 +98,7 @@ export default function AuditFormBlock() {
                             {/* Form */}
                             <motion.form 
                                 onSubmit={handleSubmit} 
-                                className="mt-6 space-y-5"
+                                className="mt-4 sm:mt-6 space-y-3 sm:space-y-4 md:space-y-5"
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -111,14 +111,14 @@ export default function AuditFormBlock() {
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.5 }}
                                 >
-                                    <label className="block text-white text-sm font-medium mb-2">Имя <span className="text-red-400">*</span></label>
+                                    <label className="block text-white text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Имя <span className="text-red-400">*</span></label>
                                     <input
                                         type="text"
                                         name="name"
                                         value={formData.name}
                                         onChange={handleInputChange}
                                         required
-                                        className="w-full px-5 py-4 rounded-xl glass border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
+                                        className="w-full px-4 sm:px-5 py-3 sm:py-3.5 md:py-4 rounded-lg sm:rounded-xl glass border border-white/20 text-white text-sm sm:text-base placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 min-h-[44px]"
                                         placeholder="Ваше имя"
                                     />
                                 </motion.div>
@@ -130,7 +130,7 @@ export default function AuditFormBlock() {
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.6 }}
                                 >
-                                    <label className="block text-white text-sm font-medium mb-2">Номер телефона <span className="text-red-400">*</span></label>
+                                    <label className="block text-white text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Номер телефона <span className="text-red-400">*</span></label>
                                     <div className="flex gap-2">
                                         <input
                                             type="tel"
@@ -138,7 +138,7 @@ export default function AuditFormBlock() {
                                             value={formData.phone}
                                             onChange={handleInputChange}
                                             required
-                                            className="w-full px-5 py-4 rounded-xl glass border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
+                                            className="w-full px-4 sm:px-5 py-3 sm:py-3.5 md:py-4 rounded-lg sm:rounded-xl glass border border-white/20 text-white text-sm sm:text-base placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 min-h-[44px]"
                                             placeholder="(99) 123-45-67"
                                         />
                                     </div>
@@ -150,13 +150,13 @@ export default function AuditFormBlock() {
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.65 }}
                                 >
-                                    <label className="block text-white text-sm font-medium mb-2">Ваш телеграм</label>
+                                    <label className="block text-white text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Ваш телеграм</label>
                                     <input
                                         type="text"
                                         name="telegram"
                                         value={formData.telegram}
                                         onChange={handleInputChange}
-                                        className="w-full px-5 py-4 rounded-xl glass border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
+                                        className="w-full px-4 sm:px-5 py-3 sm:py-3.5 md:py-4 rounded-lg sm:rounded-xl glass border border-white/20 text-white text-sm sm:text-base placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 min-h-[44px]"
                                         placeholder="@username"
                                     />
                                 </motion.div>
@@ -168,7 +168,7 @@ export default function AuditFormBlock() {
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.7 }}
                                 >
-                                    <label className="block text-white text-sm font-medium mb-2">
+                                    <label className="block text-white text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                                         Ссылка на Ваш сайт или социальные сети
                                     </label>
                                     <input
@@ -176,14 +176,14 @@ export default function AuditFormBlock() {
                                         name="website"
                                         value={formData.website}
                                         onChange={handleInputChange}
-                                        className="w-full px-5 py-4 rounded-xl glass border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300"
+                                        className="w-full px-4 sm:px-5 py-3 sm:py-3.5 md:py-4 rounded-lg sm:rounded-xl glass border border-white/20 text-white text-sm sm:text-base placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 min-h-[44px]"
                                         placeholder="https://example.com или @username"
                                     />
                                 </motion.div>
 
                                 {/* Submit */}
                                 <motion.div 
-                                    className="pt-2"
+                                    className="pt-1 sm:pt-2"
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
@@ -193,7 +193,7 @@ export default function AuditFormBlock() {
                                         type="submit"
                                         variant="dark"
                                         disabled={loading}
-                                        className="w-full rounded-xl py-6 text-lg font-semibold shadow-glow hover:shadow-glow-lg transition-all duration-300 hover-lift"
+                                        className="w-full rounded-lg sm:rounded-xl py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg font-semibold shadow-glow hover:shadow-glow-lg transition-all duration-300 hover-lift min-h-[48px]"
                                     >
                                         {loading ? "Отправка..." : "ЗАКАЗАТЬ АУДИТ"}
                                     </Button>

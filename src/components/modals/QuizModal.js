@@ -82,45 +82,29 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
     }} />
 
     return (
-        <div className="fixed inset-0 bg-white/5 backdrop-blur-md flex items-center justify-center z-50 p-4">
-            <Card className="w-full max-w-lg bg-black text-white rounded-2xl shadow-lg">
-                <CardHeader className="relative border-b border-gray-700">
-                    <CardTitle>Квиз: Получите бесплатный разбор</CardTitle>
+        <div className="fixed inset-0 bg-white/5 backdrop-blur-md flex items-center justify-center z-50 p-2 sm:p-4">
+            <Card className="w-full max-w-lg bg-black text-white rounded-xl sm:rounded-2xl shadow-lg max-h-[95vh] sm:max-h-[90vh] overflow-hidden flex flex-col">
+                <CardHeader className="relative border-b border-gray-700 p-4 sm:p-6 flex-shrink-0">
+                    <CardTitle className="text-base sm:text-lg md:text-xl pr-8">Квиз: Получите бесплатный разбор</CardTitle>
                     <Button
                         variant="ghost"
                         size="sm"
-                        className="absolute right-2 top-2 cursor-pointer"
+                        className="absolute right-2 top-2 cursor-pointer w-8 h-8 sm:w-10 sm:h-10 min-h-[44px] min-w-[44px]"
                         onClick={() => {
                             setIsOpen(false)
                             if (setExternalIsOpen) setExternalIsOpen(false)
                         }}
                     >
-                        <X className="h-4 w-4 text-white" />
+                        <X className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                     </Button>
                 </CardHeader>
 
-                <CardContent className="space-y-6 mt-5">
+                <CardContent className="space-y-4 sm:space-y-5 md:space-y-6 mt-3 sm:mt-4 md:mt-5 p-4 sm:p-6 overflow-y-auto flex-1">
                     {/* Step 1 */}
                     {step === 1 && (
-                        <div className="space-y-4">
-                            <p className="font-semibold">1. Выберите формат Вашего бизнеса</p>
-                            <div
-                                className={`grid gap-3 ${
-                                    [
-                                        "Розничная торговля",
-                                        "Строительство/Недвижимость",
-                                        "Услуги для бизнеса ( B2B )",
-                                        "Гостиницы/Рестораны/Общепит",
-                                        "Финансовый сектор",
-                                        "Оптовая торговля/Дистрибьюция",
-                                        "Перевозки/Логистика",
-                                        "Государственная организация",
-                                        "Производство",
-                                    ].length > 5
-                                        ? "grid-cols-1 sm:grid-cols-2"
-                                        : "grid-cols-1"
-                                }`}
-                            >
+                        <div className="space-y-3 sm:space-y-4">
+                            <p className="font-semibold text-sm sm:text-base">1. Выберите формат Вашего бизнеса</p>
+                            <div className="grid gap-2 sm:gap-3 grid-cols-1">
                                 {[
                                     "Розничная торговля",
                                     "Строительство/Недвижимость",
@@ -132,7 +116,7 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                     "Государственная организация",
                                     "Производство",
                                 ].map((opt) => (
-                                    <label key={opt} className="flex items-start space-x-3 cursor-pointer">
+                                    <label key={opt} className="flex items-start space-x-2 sm:space-x-3 cursor-pointer p-2 sm:p-2.5 rounded-lg hover:bg-white/5 transition-colors min-h-[48px]">
                                         <input
                                             type="radio"
                                             name="businessFormat"
@@ -142,7 +126,7 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                             className="hidden"
                                         />
                                         <span
-                                            className={`w-5 h-5 shrink-0 rounded-full border-2 flex items-center justify-center transition 
+                                            className={`w-5 h-5 sm:w-6 sm:h-6 shrink-0 rounded-full border-2 flex items-center justify-center transition mt-0.5 min-h-[44px] min-w-[44px]
                     ${
                                                 answers.businessFormat === opt
                                                     ? "border-white shadow-[0_0_8px_2px_rgba(255,255,255,0.8)] bg-white"
@@ -150,19 +134,19 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                             }`}
                                         >
                   {answers.businessFormat === opt && (
-                      <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
+                      <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-black"></span>
                   )}
                 </span>
-                                        <span className="text-sm break-words">{opt}</span>
+                                        <span className="text-xs sm:text-sm break-words flex-1 leading-relaxed">{opt}</span>
                                     </label>
                                 ))}
                             </div>
-                            <div className="flex justify-end">
+                            <div className="flex justify-end pt-2">
                                 <Button
                                     variant="select"
                                     onClick={handleNext}
                                     disabled={!answers.businessFormat}
-                                    className="rounded-2xl cursor-pointer"
+                                    className="rounded-xl sm:rounded-2xl cursor-pointer min-h-[48px] px-6 sm:px-8 text-sm sm:text-base"
                                 >
                                     Далее
                                 </Button>
@@ -172,27 +156,11 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
 
                     {/* Step 2 */}
                     {step === 2 && (
-                        <div className="space-y-4">
-                            <p className="font-semibold">
+                        <div className="space-y-3 sm:space-y-4">
+                            <p className="font-semibold text-sm sm:text-base">
                                 2. Что Вы ждете от SMM-продвижения или Контекстной рекламы?
                             </p>
-                            <div
-                                className={`grid gap-3 ${
-                                    [
-                                        "Повышение лояльности, узнаваемости и доверия",
-                                        "Разработка сайта или приложения",
-                                        "Проведение рекламных акций и конкурсов",
-                                        "Креативный контент-маркетинг",
-                                        "Нужна помощь в создании личного бренда",
-                                        "Получения заявок и продаж в социальных сетях",
-                                        "Получения заявок и продаж через Сайт",
-                                        "Настроить воронку продаж  в социальных сетях и на сайте",
-                                        "Создание воронки с помощью ботов/чат-ботов",
-                                    ].length > 5
-                                        ? "grid-cols-1 sm:grid-cols-2"
-                                        : "grid-cols-1"
-                                }`}
-                            >
+                            <div className="grid gap-2 sm:gap-3 grid-cols-1">
                                 {[
                                     "Повышение лояльности, узнаваемости и доверия",
                                     "Разработка сайта или приложения",
@@ -204,9 +172,9 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                     "Настроить воронку продаж  в социальных сетях и на сайте",
                                     "Создание воронки с помощью ботов/чат-ботов",
                                 ].map((opt) => (
-                                    <label key={opt} className="flex items-start space-x-3 cursor-pointer">
+                                    <label key={opt} className="flex items-start space-x-2 sm:space-x-3 cursor-pointer p-2 sm:p-2.5 rounded-lg hover:bg-white/5 transition-colors min-h-[48px]">
                                         <input
-                                            type="checkbox" // ✅ checkbox qo‘ydim, chunki expectations massiv
+                                            type="checkbox"
                                             name="expectations"
                                             value={opt}
                                             checked={answers.expectations.includes(opt)}
@@ -214,7 +182,7 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                             className="hidden"
                                         />
                                         <span
-                                            className={`w-5 h-5 shrink-0 rounded-full border-2 flex items-center justify-center transition 
+                                            className={`w-5 h-5 sm:w-6 sm:h-6 shrink-0 rounded-full border-2 flex items-center justify-center transition mt-0.5 min-h-[44px] min-w-[44px]
                     ${
                                                 answers.expectations.includes(opt)
                                                     ? "border-white shadow-[0_0_8px_2px_rgba(255,255,255,0.8)] bg-white"
@@ -222,18 +190,18 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                             }`}
                                         >
                   {answers.expectations.includes(opt) && (
-                      <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
+                      <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-black"></span>
                   )}
                 </span>
-                                        <span className="text-sm break-words">{opt}</span>
+                                        <span className="text-xs sm:text-sm break-words flex-1 leading-relaxed">{opt}</span>
                                     </label>
                                 ))}
                             </div>
-                            <div className="flex justify-between">
+                            <div className="flex justify-between gap-2 pt-2">
                                 <Button
                                     variant="select"
                                     onClick={handleBack}
-                                    className="rounded-2xl cursor-pointer"
+                                    className="rounded-xl sm:rounded-2xl cursor-pointer min-h-[48px] px-4 sm:px-6 text-sm sm:text-base flex-1"
                                 >
                                     Назад
                                 </Button>
@@ -241,7 +209,7 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                     variant="select"
                                     onClick={handleNext}
                                     disabled={answers.expectations.length === 0}
-                                    className="rounded-2xl cursor-pointer"
+                                    className="rounded-xl sm:rounded-2xl cursor-pointer min-h-[48px] px-4 sm:px-6 text-sm sm:text-base flex-1"
                                 >
                                     Далее
                                 </Button>
@@ -251,14 +219,14 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
 
                     {/* Step 3 */}
                     {step === 3 && (
-                        <div className="space-y-4">
-                            <p className="font-semibold">
+                        <div className="space-y-3 sm:space-y-4">
+                            <p className="font-semibold text-sm sm:text-base">
                                 3. Какой бюджет в месяц Вы готовы инвестировать?
                             </p>
-                            <div className="grid gap-3 grid-cols-1">
+                            <div className="grid gap-2 sm:gap-3 grid-cols-1">
                                 {["До $1000", "От $1000 до $2000", "От $2000 до $5000", "От $5000 и выше"].map(
                                     (opt) => (
-                                        <label key={opt} className="flex items-start space-x-3 cursor-pointer">
+                                        <label key={opt} className="flex items-start space-x-2 sm:space-x-3 cursor-pointer p-2 sm:p-2.5 rounded-lg hover:bg-white/5 transition-colors min-h-[48px]">
                                             <input
                                                 type="radio"
                                                 name="budget"
@@ -268,7 +236,7 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                                 className="hidden"
                                             />
                                             <span
-                                                className={`w-5 h-5 shrink-0 rounded-full border-2 flex items-center justify-center transition 
+                                                className={`w-5 h-5 sm:w-6 sm:h-6 shrink-0 rounded-full border-2 flex items-center justify-center transition mt-0.5 min-h-[44px] min-w-[44px]
                       ${
                                                     answers.budget === opt
                                                         ? "border-white shadow-[0_0_8px_2px_rgba(255,255,255,0.8)] bg-white"
@@ -276,31 +244,31 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                                 }`}
                                             >
                     {answers.budget === opt && (
-                        <span className="w-2.5 h-2.5 rounded-full bg-black"></span>
+                        <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-black"></span>
                     )}
                   </span>
-                                            <span className="text-sm break-words">{opt}</span>
+                                            <span className="text-xs sm:text-sm break-words flex-1 leading-relaxed">{opt}</span>
                                         </label>
                                     )
                                 )}
                             </div>
                             <div>
-                                <label className="block text-sm font-medium mb-2">
+                                <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">
                                     Ваш сайт или соцсети (необязательно)
                                 </label>
                                 <input
                                     type="text"
                                     value={answers.website}
                                     onChange={(e) => handleChange("website", e.target.value)}
-                                    className="w-full bg-transparent border border-white/50 rounded-md p-2 text-white placeholder-white/50"
+                                    className="w-full bg-transparent border border-white/50 rounded-md p-2.5 sm:p-3 text-white text-sm sm:text-base placeholder-white/50 min-h-[44px]"
                                     placeholder="https://..."
                                 />
                             </div>
-                            <div className="flex justify-between">
+                            <div className="flex justify-between gap-2 pt-2">
                                 <Button
                                     variant="select"
                                     onClick={handleBack}
-                                    className="rounded-2xl cursor-pointer"
+                                    className="rounded-xl sm:rounded-2xl cursor-pointer min-h-[48px] px-4 sm:px-6 text-sm sm:text-base flex-1"
                                 >
                                     Назад
                                 </Button>
@@ -308,7 +276,7 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                     variant="select"
                                     onClick={handleNext}
                                     disabled={!answers.budget}
-                                    className="rounded-2xl cursor-pointer"
+                                    className="rounded-xl sm:rounded-2xl cursor-pointer min-h-[48px] px-4 sm:px-6 text-sm sm:text-base flex-1"
                                 >
                                     Далее
                                 </Button>
@@ -318,36 +286,36 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
 
                     {/* Step 4 */}
                     {step === 4 && (
-                        <div className="space-y-4">
-                            <p className="font-semibold">4. Оставьте ваши контакты:</p>
+                        <div className="space-y-3 sm:space-y-4">
+                            <p className="font-semibold text-sm sm:text-base">4. Оставьте ваши контакты:</p>
 
                             <div>
-                                <label className="block text-sm font-medium mb-2">Ваше имя</label>
+                                <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Ваше имя</label>
                                 <input
                                     type="text"
                                     value={answers.name}
                                     onChange={(e) => handleChange("name", e.target.value)}
-                                    className="w-full bg-transparent border border-white/50 rounded-md p-2 text-white placeholder-white/50"
+                                    className="w-full bg-transparent border border-white/50 rounded-md p-2.5 sm:p-3 text-white text-sm sm:text-base placeholder-white/50 min-h-[44px]"
                                     placeholder="Введите имя"
                                 />
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium mb-2">Телефон</label>
+                                <label className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2">Телефон</label>
                                 <input
                                     type="tel"
                                     value={answers.phone}
                                     onChange={(e) => handleChange("phone", e.target.value)}
-                                    className="w-full bg-transparent border border-white/50 rounded-md p-2 text-white placeholder-white/50"
+                                    className="w-full bg-transparent border border-white/50 rounded-md p-2.5 sm:p-3 text-white text-sm sm:text-base placeholder-white/50 min-h-[44px]"
                                     placeholder="+998 (___) ___-__-__"
                                 />
                             </div>
 
-                            <div className="flex justify-between">
+                            <div className="flex justify-between gap-2 pt-2">
                                 <Button
                                     variant="select"
                                     onClick={handleBack}
-                                    className="rounded-2xl cursor-pointer"
+                                    className="rounded-xl sm:rounded-2xl cursor-pointer min-h-[48px] px-4 sm:px-6 text-sm sm:text-base flex-1"
                                 >
                                     Назад
                                 </Button>
@@ -355,7 +323,7 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                     variant="dark"
                                     onClick={handleSubmit}
                                     disabled={!answers.name || !answers.phone}
-                                    className="rounded-2xl cursor-pointer"
+                                    className="rounded-xl sm:rounded-2xl cursor-pointer min-h-[48px] px-4 sm:px-6 text-sm sm:text-base flex-1"
                                 >
                                     Отправить
                                 </Button>
@@ -364,14 +332,14 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                     )}
 
                     {/* Progress bar */}
-                    <div className="mt-6">
-                        <div className="w-full bg-gray-700 h-2 rounded-full overflow-hidden">
+                    <div className="mt-4 sm:mt-5 md:mt-6 pt-3 sm:pt-4 border-t border-gray-700">
+                        <div className="w-full bg-gray-700 h-1.5 sm:h-2 rounded-full overflow-hidden">
                             <div
                                 className="neon-progress"
                                 style={{ width: `${progress}%` }}
                             ></div>
                         </div>
-                        <p className="text-sm text-gray-400 mt-2 text-right">
+                        <p className="text-xs sm:text-sm text-gray-400 mt-1.5 sm:mt-2 text-right">
                             {progress}% завершено
                         </p>
                     </div>

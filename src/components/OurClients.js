@@ -83,38 +83,38 @@ const companies = [
 
 export default function CompanyLogos() {
     return (
-        <section className="py-16 relative overflow-hidden">
+        <section className="py-10 sm:py-12 md:py-16 relative overflow-hidden">
             {/* Background gradient */}
             <div className="absolute inset-0 bg-gradient-radial opacity-10 pointer-events-none"></div>
             
-            <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <motion.div 
-                    className="text-center mb-12"
+                    className="text-center mb-8 sm:mb-10 md:mb-12"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold mb-3 sm:mb-4">
                         <span className="gradient-text">Наши партнеры</span>
                     </h2>
-                    <p className="text-lg text-gray-300">
+                    <p className="text-sm sm:text-base md:text-lg text-gray-300">
                         Компании, которые доверяют нам
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 place-items-center">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-6 place-items-center">
                     {companies.map((company, index) => (
                         <motion.div
                             key={company.id}
-                            className="glass rounded-2xl p-6 shadow-glow cursor-pointer group flex items-center justify-center border border-white/10 hover:border-white/20 transition-all duration-300 hover-lift"
+                            className="glass rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 lg:p-6 shadow-glow cursor-pointer group flex items-center justify-center border border-white/10 hover:border-white/20 transition-all duration-300 hover-lift w-full aspect-square"
                             initial={{ opacity: 0, scale: 0.8 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.05, duration: 0.4 }}
-                            whileHover={{ scale: 1.1, y: -5 }}
+                            whileHover={{ scale: 1.05, y: -3 }}
                         >
-                            <div className="relative h-15 md:h-20 w-30 md:w-40 flex items-center justify-center">
+                            <div className="relative h-12 sm:h-16 md:h-20 w-full flex items-center justify-center">
                                 <Image
                                     src={company.logo || "/placeholder.svg"}
                                     alt={company.name}

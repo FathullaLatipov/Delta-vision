@@ -106,12 +106,12 @@ export default function FAQ() {
     }
 
     return (
-        <section id="services" className="py-16 px-6 relative overflow-hidden">
+        <section id="services" className="py-10 sm:py-12 md:py-16 px-4 sm:px-6 relative overflow-hidden">
             {/* Background gradient */}
             <div className="absolute inset-0 bg-gradient-radial opacity-10 pointer-events-none"></div>
             
             <div className="max-w-7xl mx-auto relative z-10">
-                <div className="grid lg:grid-cols-2 gap-16 items-start">
+                <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-start">
                     {/* Left Column */}
                     <motion.div 
                         className="lg:sticky lg:top-16"
@@ -120,21 +120,21 @@ export default function FAQ() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h1 className="text-3xl lg:text-6xl font-bold leading-tight mb-8">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6 md:mb-8">
                             <span className="gradient-text">Услуги</span>
                             <br />
                             Delta Vision
                         </h1>
-                        <p className="text-gray-300 text-lg leading-relaxed mb-4">
+                        <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed mb-3 sm:mb-4">
                             <b className="text-white">Контент-маркетинг (SMM)</b> — решаем бизнес-задачи клиентов через диалог с аудиторией.
                             Комплексные стратегии, дизайн, лидогенерация. <b className="text-white">Прогноз фиксируем в договоре.</b>
                         </p>
-                        <p className="text-gray-300 text-lg leading-relaxed">
+                        <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed mb-4 sm:mb-6">
                             <b className="text-white">SMM-ПРОДВИЖЕНИЕ ПОД КЛЮЧ</b> — собственная методология digital-агентства Delta Vision позволяет спрогнозировать
                             количество лидов и заявок. При заказе продвижения, прогноз результата строится исходя из отрасли, региона, объема работ и рекламного бюджета.
                         </p>
                         <motion.div
-                            className="mt-6"
+                            className="mt-4 sm:mt-6"
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -142,7 +142,7 @@ export default function FAQ() {
                         >
                             <Button
                                 variant="dark"
-                                className="rounded-full py-5 cursor-pointer shadow-glow hover:shadow-glow-lg transition-all duration-300"
+                                className="rounded-full py-4 sm:py-5 cursor-pointer shadow-glow hover:shadow-glow-lg transition-all duration-300 w-full sm:w-auto text-sm sm:text-base min-h-[48px]"
                                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                             >
                                 Оставить заявку на консультацию
@@ -163,7 +163,7 @@ export default function FAQ() {
                             return (
                                 <motion.div 
                                     key={index} 
-                                    className="glass border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300"
+                                    className="glass border border-white/10 rounded-xl sm:rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300"
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
@@ -172,21 +172,21 @@ export default function FAQ() {
                                 >
                                     <motion.button
                                         onClick={() => toggleItem(index)}
-                                        className="w-full py-6 px-6 flex items-center justify-between text-left transition-all duration-300 cursor-pointer group"
+                                        className="w-full py-4 sm:py-5 md:py-6 px-4 sm:px-5 md:px-6 flex items-center justify-between text-left transition-all duration-300 cursor-pointer group min-h-[56px]"
                                         whileHover={{ x: 5 }}
                                     >
-                                        <span className="text-xl font-semibold pr-4 flex-1 text-white group-hover:text-gray-100">
+                                        <span className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold pr-3 sm:pr-4 flex-1 text-white group-hover:text-gray-100 leading-tight">
                                             {item.question}
                                         </span>
                                         <motion.div 
-                                            className="flex-shrink-0 w-10 h-10 rounded-full glass border border-white/20 flex items-center justify-center"
+                                            className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full glass border border-white/20 flex items-center justify-center min-h-[44px] min-w-[44px]"
                                             animate={{ rotate: isOpen ? 180 : 0 }}
                                             transition={{ duration: 0.3 }}
                                         >
                                             {isOpen ? (
-                                                <Minus className="w-5 h-5 text-white" />
+                                                <Minus className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                                             ) : (
-                                                <Plus className="w-5 h-5 text-white" />
+                                                <Plus className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                                             )}
                                         </motion.div>
                                     </motion.button>
@@ -200,7 +200,7 @@ export default function FAQ() {
                                                 transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
                                                 className="overflow-hidden"
                                             >
-                                                <div className="px-6 pb-6 text-gray-300 leading-relaxed">
+                                                <div className="px-4 sm:px-5 md:px-6 pb-4 sm:pb-5 md:pb-6 text-gray-300 text-xs sm:text-sm md:text-base leading-relaxed">
                                                     {item.answer}
                                                 </div>
                                             </motion.div>

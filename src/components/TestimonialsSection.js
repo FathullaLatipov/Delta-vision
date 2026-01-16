@@ -68,32 +68,32 @@ export default function TestimonialsSection() {
     }
 
     return (
-        <section id='reviews' className="py-20 px-4 relative overflow-hidden">
+        <section id='reviews' className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 relative overflow-hidden">
             {/* Background gradient */}
             <div className="absolute inset-0 bg-gradient-radial opacity-10 pointer-events-none"></div>
             
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header */}
                 <motion.div 
-                    className="text-center mb-16"
+                    className="text-center mb-8 sm:mb-12 md:mb-16"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <p className="text-sm font-medium text-gray-400 mb-4 tracking-wider uppercase">
+                    <p className="text-xs sm:text-sm font-medium text-gray-400 mb-3 sm:mb-4 tracking-wider uppercase">
                         Отзывы
                     </p>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
                         <span className="gradient-text">Что говорят</span> о нас клиенты
                     </h2>
-                    <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+                    <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4">
                         Средний LTV работы с проектом — <span className="text-white font-semibold">12 месяцев</span>
                     </p>
                 </motion.div>
 
                 {/* Carousel */}
-                <div className="relative mb-12 overflow-hidden">
+                <div className="relative mb-8 sm:mb-10 md:mb-12 overflow-hidden">
                     <motion.div
                         className="flex transition-transform duration-500 ease-in-out"
                         animate={{ transform: `translateX(-${(100 / visibleCount) * currentIndex}%)` }}
@@ -102,23 +102,23 @@ export default function TestimonialsSection() {
                         {testimonials.map((testimonial, index) => (
                             <motion.div
                                 key={testimonial.id}
-                                className={`flex-shrink-0 px-3`}
+                                className={`flex-shrink-0 px-1.5 sm:px-2 md:px-3`}
                                 style={{ width: `${100 / visibleCount}%` }}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
                             >
-                                <Card className="p-8 h-full glass border border-white/10 hover:border-white/20 transition-all duration-300 hover-lift">
-                                    <h3 className="text-xl font-bold text-white mb-6 gradient-text-accent">
+                                <Card className="p-4 sm:p-6 md:p-8 h-full glass border border-white/10 hover:border-white/20 transition-all duration-300 hover-lift">
+                                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-white mb-3 sm:mb-4 md:mb-6 gradient-text-accent">
                                         {testimonial.title}
                                     </h3>
-                                    <p className="text-gray-300 leading-relaxed mb-8 flex-grow text-base">
+                                    <p className="text-gray-300 leading-relaxed mb-4 sm:mb-6 md:mb-8 flex-grow text-xs sm:text-sm md:text-base">
                                         {testimonial.content}
                                     </p>
 
                                     {/* Rating */}
-                                    <div className="flex gap-1 mb-6">
+                                    <div className="flex gap-1 mb-4 sm:mb-5 md:mb-6">
                                         {Array.from({ length: testimonial.rating }).map((_, i) => (
                                             <motion.div
                                                 key={i}
@@ -127,22 +127,22 @@ export default function TestimonialsSection() {
                                                 viewport={{ once: true }}
                                                 transition={{ delay: 0.1 * i }}
                                             >
-                                                <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                                                <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" />
                                             </motion.div>
                                         ))}
                                     </div>
 
                                     {/* Author */}
-                                    <div className="flex items-center justify-between pt-4 border-t border-white/10">
-                                        <div>
-                                            <p className="font-bold text-white">{testimonial.author}</p>
-                                            <p className="text-sm text-gray-400">{testimonial.position}</p>
+                                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pt-3 sm:pt-4 border-t border-white/10 gap-3 sm:gap-0">
+                                        <div className="flex-1 min-w-0">
+                                            <p className="font-bold text-white text-sm sm:text-base">{testimonial.author}</p>
+                                            <p className="text-xs sm:text-sm text-gray-400 leading-tight">{testimonial.position}</p>
                                         </div>
-                                        <div className="flex items-center gap-2">
-                                            <div className="w-10 h-10 bg-gradient-premium rounded-full flex items-center justify-center shadow-glow">
-                                                <span className="text-white font-bold text-sm">L</span>
+                                        <div className="flex items-center gap-2 flex-shrink-0">
+                                            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-premium rounded-full flex items-center justify-center shadow-glow">
+                                                <span className="text-white font-bold text-xs sm:text-sm">L</span>
                                             </div>
-                                            <span className="text-white font-semibold">Logoipsum</span>
+                                            <span className="text-white font-semibold text-xs sm:text-sm hidden sm:inline">Logoipsum</span>
                                         </div>
                                     </div>
                                 </Card>
@@ -153,7 +153,7 @@ export default function TestimonialsSection() {
 
                 {/* Navigation */}
                 <motion.div 
-                    className="flex justify-center gap-4"
+                    className="flex justify-center gap-3 sm:gap-4"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
@@ -165,9 +165,9 @@ export default function TestimonialsSection() {
                             size="icon"
                             onClick={prevTestimonial}
                             disabled={currentIndex === 0}
-                            className="rounded-full bg-gradient-premium text-white hover:opacity-90 border-0 w-14 h-14 shadow-glow hover:shadow-glow-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                            className="rounded-full bg-gradient-premium text-white hover:opacity-90 border-0 w-12 h-12 sm:w-14 sm:h-14 shadow-glow hover:shadow-glow-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed min-h-[48px] min-w-[48px]"
                         >
-                            <ChevronLeft className="w-6 h-6" />
+                            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
                         </Button>
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
@@ -176,9 +176,9 @@ export default function TestimonialsSection() {
                             size="icon"
                             onClick={nextTestimonial}
                             disabled={currentIndex >= testimonials.length - visibleCount}
-                            className="rounded-full bg-gradient-premium text-white hover:opacity-90 border-0 w-14 h-14 shadow-glow hover:shadow-glow-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                            className="rounded-full bg-gradient-premium text-white hover:opacity-90 border-0 w-12 h-12 sm:w-14 sm:h-14 shadow-glow hover:shadow-glow-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed min-h-[48px] min-w-[48px]"
                         >
-                            <ChevronRight className="w-6 h-6" />
+                            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
                         </Button>
                     </motion.div>
                 </motion.div>
