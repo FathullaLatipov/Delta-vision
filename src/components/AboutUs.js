@@ -175,7 +175,8 @@ export default function AboutUs() {
                     transition={{ duration: 0.6, delay: 0.8 }}
                 >
                     <motion.button
-                        className="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-5 md:py-6 bg-gradient-premium text-white rounded-full text-sm sm:text-base md:text-lg font-semibold shadow-glow hover:shadow-glow-lg transition-all duration-300 hover-lift min-h-[48px]"
+                        className="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-5 md:py-6 text-white rounded-full text-sm sm:text-base md:text-lg font-semibold shadow-glow hover:shadow-glow-lg transition-all duration-300 hover-lift min-h-[48px]"
+                        style={{ backgroundColor: 'oklch(54.6% 0.245 262.881)' }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}

@@ -12,7 +12,7 @@ const testimonials = [
         id: 1,
         title: "ОТЗЫВЫ",
         content:
-            "Работа с «Delta Vision» для нашей компании — это оптимальный вариант. Содержать в штате отдельно IT-специалистов считаю экономически нецелесообразно. При этом сотрудник будет узконаправленным, а результаты его работы не всегда будут решать стоящие перед компанией задачи. Оптимальнее работать с группой специалистов , которые видят задачу во всех ракурсах и совместно предлагают лучшее решение заказчику. Мы профессионально занимаемся производством и продажей сэндвич-панелей и профнастила по Узбекистану и СНГ , Delta Vision занимаются рекламной нашей продукции в интернет пространстве.",
+            "Работа с «Masters&Makers» для нашей компании — это оптимальный вариант. Содержать в штате отдельно IT-специалистов считаю экономически нецелесообразно. При этом сотрудник будет узконаправленным, а результаты его работы не всегда будут решать стоящие перед компанией задачи. Оптимальнее работать с группой специалистов , которые видят задачу во всех ракурсах и совместно предлагают лучшее решение заказчику. Мы профессионально занимаемся производством и продажой сэндвич-панелей и профнастила по Узбекистану и СНГ , Masters&Makers занимаются рекламной нашей продукции в интернет пространстве. От лица компании выражаю благодарность и желаю дальнейшего взаимовыгодного сотрудничества",
         author: "Хикматов Ж.",
         position: "Директор по маркетингу «Maxproduct»",
         rating: 5,
@@ -30,7 +30,7 @@ const testimonials = [
         id: 3,
         title: "ОТЗЫВЫ",
         content:
-            "Выражаем благодарность маркетинговому агентству «Delta Vision» за плодотворную работу по настройке контекстной рекламы Google Ads для компании «Eastline Express». Ваш профессионализм, высокое качество оказываемых услуг и индивидуальный подход помогли нам обеспечить и поддерживать бесперебойную работу сайта и поток клиентов. Надеемся на дальнейшее плодотворное сотрудничество по новым проектам. Желаем развития и процветания.",
+            "Выражаем благодарность маркетинговому агентству «Masters&Makers», за плодотворную работу по настройке контекстной рекламы Google Ads для компании «Eastline Express». Ваш профессионализм, высокое качество оказываемых услуг и  индивидуальный подход помогли нам обеспечить и поддерживать бесперебойную работу сайта и поток клиентов Надеемся на дальнейшее плодотворное сотрудничество по нашим новым проектам. Желаем развития и процветания",
         author: "Сафаров Улугбек",
         position: "Генеральный директор компании «Eastline Express»",
         rating: 5,
@@ -138,12 +138,12 @@ export default function TestimonialsSection() {
                                             <p className="font-bold text-white text-sm sm:text-base">{testimonial.author}</p>
                                             <p className="text-xs sm:text-sm text-gray-400 leading-tight">{testimonial.position}</p>
                                         </div>
-                                        <div className="flex items-center gap-2 flex-shrink-0">
+                                        {/* <div className="flex items-center gap-2 flex-shrink-0">
                                             <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-premium rounded-full flex items-center justify-center shadow-glow">
                                                 <span className="text-white font-bold text-xs sm:text-sm">L</span>
                                             </div>
                                             <span className="text-white font-semibold text-xs sm:text-sm hidden sm:inline">Logoipsum</span>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </Card>
                             </motion.div>
@@ -165,7 +165,8 @@ export default function TestimonialsSection() {
                             size="icon"
                             onClick={prevTestimonial}
                             disabled={currentIndex === 0}
-                            className="rounded-full bg-gradient-premium text-white hover:opacity-90 border-0 w-12 h-12 sm:w-14 sm:h-14 shadow-glow hover:shadow-glow-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed min-h-[48px] min-w-[48px]"
+                            className="rounded-full text-white hover:opacity-90 border-0 w-12 h-12 sm:w-14 sm:h-14 shadow-glow hover:shadow-glow-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed min-h-[48px] min-w-[48px]"
+                            style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
                         >
                             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
                         </Button>
@@ -176,7 +177,8 @@ export default function TestimonialsSection() {
                             size="icon"
                             onClick={nextTestimonial}
                             disabled={currentIndex >= testimonials.length - visibleCount}
-                            className="rounded-full bg-gradient-premium text-white hover:opacity-90 border-0 w-12 h-12 sm:w-14 sm:h-14 shadow-glow hover:shadow-glow-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed min-h-[48px] min-w-[48px]"
+                            className="rounded-full text-white hover:opacity-90 border-0 w-12 h-12 sm:w-14 sm:h-14 shadow-glow hover:shadow-glow-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed min-h-[48px] min-w-[48px]"
+                            style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
                         >
                             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
                         </Button>

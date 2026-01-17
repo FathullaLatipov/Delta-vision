@@ -51,7 +51,14 @@ export const HeadSection = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
                         >
-                            <span className="gradient-text">SMM. Реклама в GOOGLE и YANDEX</span>
+                            SMM. Реклама в <span className="inline-block">
+                                <span style={{ color: '#4285F4' }}>G</span>
+                                <span style={{ color: '#EA4335' }}>O</span>
+                                <span style={{ color: '#FBBC05' }}>O</span>
+                                <span style={{ color: '#4285F4' }}>G</span>
+                                <span style={{ color: '#34A853' }}>L</span>
+                                <span style={{ color: '#EA4335' }}>E</span>
+                            </span> и <span><span style={{ color: '#FC3F1D' }}>Y</span><span style={{ color: '#ffffff' }}>ANDEX</span></span>
                         </motion.h1>
 
                         <motion.p 
@@ -92,6 +99,7 @@ export const HeadSection = () => {
                                 <Button
                                     variant='dark'
                                     className="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg font-semibold rounded-full hover-gradient cursor-pointer shadow-glow hover:shadow-glow-lg transition-all duration-300 group"
+                                    style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
                                 >
                                     Заказать экспертный аудит
                                     <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />

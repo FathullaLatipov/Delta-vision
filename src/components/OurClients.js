@@ -57,7 +57,7 @@ const companies = [
     {
         id: 11,
         name: "Лукойл",
-        logo: "/image/clientsLogo/11.png",
+        logo: "/image/clientsLogo/16.jpg",
     },
     {
         id: 12,

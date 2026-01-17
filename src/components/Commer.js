@@ -62,6 +62,7 @@ const SectionComponent = () => {
                     <Button
                         variant="dark"
                         className="rounded-full py-4 sm:py-5 md:py-6 px-6 sm:px-8 cursor-pointer shadow-glow hover:shadow-glow-lg transition-all duration-300 hover-lift w-full sm:w-auto text-sm sm:text-base md:text-lg min-h-[48px]"
+                        style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
                         onClick={() => setIsOpen(true)}
                     >
                         <Sparkles className="mr-2 h-4 w-4" />

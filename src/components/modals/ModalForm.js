@@ -164,7 +164,8 @@ export default function ModalForm({ isOpen, setIsOpen }) {
 
                             <button
                                 type="submit"
-                                className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold py-3 sm:py-4 rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all min-h-[48px] text-sm sm:text-base shadow-lg hover:shadow-xl"
+                                className="w-full text-white font-bold py-3 sm:py-4 rounded-xl transition-all min-h-[48px] text-sm sm:text-base shadow-lg hover:shadow-xl"
+                                style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
                             >
                                 ОСТАВИТЬ ЗАЯВКУ
                             </button>

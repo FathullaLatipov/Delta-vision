@@ -23,9 +23,11 @@ export default function Footer() {
                             <h2 className="text-white text-xl sm:text-2xl font-bold uppercase gradient-text">DELTA VISION</h2>
                         </div>
                         <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-sm">
-                            We're a team of creative thinkers and tech-savvy problem solvers passionate about building digital
-                            products that deliver real results. From branding to full-scale web solutions, we turn ambitious ideas
-                            into standout experiences.
+                        Cпециалисты по интернет-маркетингу с 6-летним опытом работы в продвижении брендов в разных нишах: от fashion и ритейла до образования, IT и HoReCa. Наша ключевая цель в каждом проекте — не просто увеличить охваты и
+                            лайки, а выстроить систему, которая приводит целевой трафик и конвертирует
+                            его в продажи.
+
+                            
                         </p>
                     </motion.div>
 

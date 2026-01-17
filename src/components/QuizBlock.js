@@ -10,7 +10,7 @@ export default function QuizBlock() {
 
     return (
         <>
-            <section className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 relative overflow-hidden">
+            {/* <section className="py-8 sm:py-10 md:py-12 px-4 sm:px-6 relative overflow-hidden">
                 <div className="max-w-7xl mx-auto">
                     <motion.div
                         className="glass-strong border border-white/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-center"
@@ -39,8 +39,8 @@ export default function QuizBlock() {
                         </motion.div>
                     </motion.div>
                 </div>
-            </section>
-            {isQuizOpen && <QuizModal isOpen={isQuizOpen} setIsOpen={setIsQuizOpen} />}
+            </section> */}
+            {/* {isQuizOpen && <QuizModal isOpen={isQuizOpen} setIsOpen={setIsQuizOpen} />} */}
         </>
     )
 }

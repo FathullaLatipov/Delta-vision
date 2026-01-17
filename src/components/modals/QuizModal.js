@@ -40,6 +40,18 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
         }
     }, [isOpen, externalIsOpen, setExternalIsOpen])
 
+    // Prevent body scroll when modal is open
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = "hidden"
+        } else {
+            document.body.style.overflow = ""
+        }
+        return () => {
+            document.body.style.overflow = ""
+        }
+    }, [isOpen])
+
     const handleNext = () => setStep((prev) => prev + 1)
     const handleBack = () => setStep((prev) => prev - 1)
 
@@ -80,18 +92,6 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
         setIsOpen(false)
         if (setExternalIsOpen) setExternalIsOpen(false)
     }} />
-
-    // Prevent body scroll when modal is open
-    useEffect(() => {
-        if (isOpen) {
-            document.body.style.overflow = "hidden"
-        } else {
-            document.body.style.overflow = ""
-        }
-        return () => {
-            document.body.style.overflow = ""
-        }
-    }, [isOpen])
 
     return (
         <div className="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-50 p-3 sm:p-4 md:p-6" onClick={(e) => e.target === e.currentTarget && (setIsOpen(false), setExternalIsOpen?.(false))}>
@@ -159,6 +159,7 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                     onClick={handleNext}
                                     disabled={!answers.businessFormat}
                                     className="rounded-xl cursor-pointer min-h-[48px] px-8 sm:px-10 text-sm sm:text-base font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+                                    style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
                                 >
                                     Далее
                                 </Button>
@@ -214,6 +215,7 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                     variant="select"
                                     onClick={handleBack}
                                     className="rounded-xl cursor-pointer min-h-[48px] px-6 sm:px-8 text-sm sm:text-base font-semibold flex-1"
+                                    style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
                                 >
                                     Назад
                                 </Button>
@@ -222,6 +224,7 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                     onClick={handleNext}
                                     disabled={answers.expectations.length === 0}
                                     className="rounded-xl cursor-pointer min-h-[48px] px-6 sm:px-8 text-sm sm:text-base font-semibold flex-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
                                 >
                                     Далее
                                 </Button>
@@ -281,6 +284,7 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                     variant="select"
                                     onClick={handleBack}
                                     className="rounded-xl cursor-pointer min-h-[48px] px-6 sm:px-8 text-sm sm:text-base font-semibold flex-1"
+                                    style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
                                 >
                                     Назад
                                 </Button>
@@ -289,6 +293,7 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                     onClick={handleNext}
                                     disabled={!answers.budget}
                                     className="rounded-xl cursor-pointer min-h-[48px] px-6 sm:px-8 text-sm sm:text-base font-semibold flex-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
                                 >
                                     Далее
                                 </Button>
@@ -330,6 +335,7 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                     variant="select"
                                     onClick={handleBack}
                                     className="rounded-xl cursor-pointer min-h-[48px] px-6 sm:px-8 text-sm sm:text-base font-semibold flex-1"
+                                    style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
                                 >
                                     Назад
                                 </Button>
@@ -338,6 +344,7 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                     onClick={handleSubmit}
                                     disabled={!answers.name || !answers.phone}
                                     className="rounded-xl cursor-pointer min-h-[48px] px-6 sm:px-8 text-sm sm:text-base font-semibold flex-1 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
                                 >
                                     Отправить
                                 </Button>

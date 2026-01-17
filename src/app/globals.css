@@ -60,14 +60,14 @@ body {
 
 /* Premium gradient text */
 .gradient-text {
-    background: linear-gradient(135deg, #ffffff 0%, #a78bfa 50%, #6366f1 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #60a5fa 50%, #3b82f6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .gradient-text-accent {
-    background: linear-gradient(135deg, #a78bfa 0%, #6366f1 50%, #4f46e5 100%);
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #2563eb 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -268,3 +268,12 @@ body {
 .scrollbar-track-transparent::-webkit-scrollbar-track {
     background: transparent;
 }
+
+.phone-mask {
+    -webkit-mask-image: url("/image/iphone.png");
+    mask-image: url("/image/iphone.png");
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }

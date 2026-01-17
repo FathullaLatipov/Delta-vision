@@ -46,7 +46,8 @@ export default function ThankYouPage({ onClose }) {
 
                         <Button
                             onClick={handleTelegramClick}
-                            className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white flex items-center justify-center rounded-xl py-3 sm:py-4 min-h-[48px] font-semibold shadow-lg hover:shadow-xl transition-all"
+                            className="w-full text-white flex items-center justify-center rounded-xl py-3 sm:py-4 min-h-[48px] font-semibold shadow-lg hover:shadow-xl transition-all"
+                            style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
                         >
                             <MessageCircle className="h-5 w-5 mr-2" />
                             Написать в Телеграм
@@ -56,6 +57,7 @@ export default function ThankYouPage({ onClose }) {
                             onClick={handleCallClick}
                             variant="select"
                             className="w-full rounded-xl py-3 sm:py-4 min-h-[48px] font-semibold"
+                            style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
                         >
                             <Phone className="h-5 w-5 mr-2" />
                             Позвонить

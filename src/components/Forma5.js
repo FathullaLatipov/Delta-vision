@@ -194,6 +194,7 @@ export default function AuditFormBlock() {
                                         variant="dark"
                                         disabled={loading}
                                         className="w-full rounded-lg sm:rounded-xl py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg font-semibold shadow-glow hover:shadow-glow-lg transition-all duration-300 hover-lift min-h-[48px]"
+                                        style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
                                     >
                                         {loading ? "Отправка..." : "ЗАКАЗАТЬ АУДИТ"}
                                     </Button>
