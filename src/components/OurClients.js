@@ -120,6 +120,7 @@ export default function CompanyLogos() {
                                     alt={company.name}
                                     width={160}
                                     height={80}
+                                    loading="lazy"
                                     className="max-w-full max-h-full object-contain transition-all duration-500
                    filter grayscale opacity-60
                    group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110"

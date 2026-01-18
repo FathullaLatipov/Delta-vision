@@ -32,7 +32,6 @@ export default function ServicesSection() {
     }, [selectedType]) // Re-run effect when selectedType changes to observe new items
 
     const [caseModalOpen, setCaseModalOpen] = useState(false)
-    const [selectedCase, setSelectedCase] = useState(null)
 
     // Data for SMM & Content Marketing
     const smmServices = [
@@ -303,6 +302,8 @@ export default function ServicesSection() {
                                                         src={service.image}
                                                         alt={service.title}
                                                         className="w-full h-auto object-contain"
+                                                        loading="lazy"
+                                                        decoding="async"
                                                     />
                                                 </div>
                                             </motion.div>
