@@ -4,15 +4,14 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 
 const logos = [
-    "/image/logos/img.png",
-    "/image/logos/img_2.png",
-    "/image/logos/img_3.png",
-    "/image/logos/img_4.png",
-    "/image/logos/img_5.png",
-    "/image/logos/img_6.png",
-    "/image/logos/img_7.png",
-    "/image/logos/img_8.png",
-    "/image/logos/img_9.png",
+    "/image/logos/1.png",
+    "/image/logos/2.png",
+    "/image/logos/3.png",
+    "/image/logos/4.png",
+    "/image/logos/5.png",
+    "/image/logos/6.png",
+    "/image/logos/7.png",
+    "/image/logos/8.png",
 ]
 
 export const ClientLogos = () => {
@@ -39,8 +38,8 @@ export const ClientLogos = () => {
                                     <Image
                                         src={logo}
                                         alt={`Client logo ${idx + 1}`}
-                                        width={120}
-                                        height={60}
+                                        width={190}
+                                        height={68}
                                         className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
                                     />
                                 </motion.div>
@@ -59,8 +58,8 @@ export const ClientLogos = () => {
                                     <Image
                                         src={logo}
                                         alt={`Client logo duplicate ${idx + 1}`}
-                                        width={120}
-                                        height={60}
+                                        width={190}
+                                        height={80}
                                         className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
                                     />
                                 </motion.div>

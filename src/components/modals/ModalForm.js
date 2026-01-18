@@ -27,8 +27,8 @@ export default function ModalForm({ isOpen, setIsOpen }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const botToken = "7979056923:AAGyTS9c7mi6S0f2XR4yoKzNBe310ZSQlrw";
-        const chatId = "-1003076468133";
+        const botToken = "8329298216:AAFbRhiHqSzhhyjDjLc2w_wM3GcfyJhBr5M";
+        const chatId = "-1003670905082";
 
         const textMessage = `
 📩 *Новая заявка:*  

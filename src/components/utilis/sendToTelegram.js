@@ -1,7 +1,7 @@
 
 export async function sendToTelegram(message) {
-    const botToken = "7979056923:AAGyTS9c7mi6S0f2XR4yoKzNBe310ZSQlrw"
-    const chatId = "-1003076468133"
+    const botToken = "8329298216:AAFbRhiHqSzhhyjDjLc2w_wM3GcfyJhBr5M"
+    const chatId = "-1003670905082"
 
     try {
         await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {

@@ -49,7 +49,7 @@ export default function ServicesSection() {
                 { label: "Клиентов уехали учиться", value: "27", highlight: true },
             ],
             hasImage: true,
-            image: "/image/keys/1/img.png",
+            image: "/image/keys/1/1.png",
         },
         {
             number: "Maxproduct",
@@ -63,7 +63,7 @@ export default function ServicesSection() {
                 { label: "Крупных контрактов", value: "5", highlight: true },
             ],
             hasImage: true,
-            image: "/image/keys/1/img_1.png",
+            image: "/image/keys/1/4.png",
         },
         {
             number: "Mobistore",
@@ -77,7 +77,7 @@ export default function ServicesSection() {
                 { label: "Рост среднего чека", value: "+18%", highlight: true },
             ],
             hasImage: true,
-            image: "/image/keys/1/img_2.png",
+            image: "/image/keys/1/2.png",
         },
         {
             number: "Jalousie Brand",
@@ -93,7 +93,7 @@ export default function ServicesSection() {
                 { label: "Продажи", value: "1 млрд сум", highlight: true },
             ],
             hasImage: true,
-            image: "/image/keys/1/img_3.png",
+            image: "/image/keys/1/3.png",
         },
     ]
 
@@ -111,7 +111,7 @@ export default function ServicesSection() {
                 { label: "Время отклика", value: "2 мин", highlight: true },
             ],
             hasImage: true,
-            image: "/image/keys/2/img.png",
+            image: "/image/keys/2/5.png",
         },
         {
             number: "Кейс 2",
@@ -126,7 +126,7 @@ export default function ServicesSection() {
                 { label: "Конверсия сайта", value: "1,9% → 3,5%", highlight: true },
             ],
             hasImage: true,
-            image: "/image/keys/2/img_1.png",
+            image: "/image/keys/2/6.png",
         },
         {
             number: "Кейс 3",
@@ -140,21 +140,21 @@ export default function ServicesSection() {
                 { label: "Рост записи к врачам", value: "+40%", highlight: true },
             ],
             hasImage: true,
-            image: "/image/keys/2/img_2.png",
+            image: "/image/keys/2/8.png",
         },
         {
             number: "Кейс 4",
-            title: "Truck&Train",
-            subtitle: "Курсы по логистике",
-            goal: "Увеличить количество регистраций на пробный урок, снизить CPL, привлечь качественные лиды, заинтересованные в профессии логиста.",
+            title: "Logist Academy",
+            subtitle: "Курсы по логистике (онлайн и офлайн)",
+            goal: "Привлечение новых студентов через контекстную рекламу  и увеличение числа регистраций на пробные уроки.",
             results: [
-                { label: "Заявок в день", value: "5+", highlight: true },
+                { label: "Заявки (лиды)", value: "от 5 целевых заявок в день", highlight: true },
                 { label: "CPL", value: "$0,78", highlight: true },
                 { label: "Конверсия в студента", value: "10%", highlight: true },
                 { label: "Рост узнаваемости", value: "+35%", highlight: true },
             ],
             hasImage: true,
-            image: "/image/keys/2/img_3.png",
+            image: "/image/keys/2/7.png",
         },
     ]
 
@@ -224,9 +224,13 @@ export default function ServicesSection() {
                                     animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : {}}
                                     exit={{ opacity: 0, y: -30 }}
                                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                                    className="glass border border-white/10 rounded-2xl sm:rounded-3xl overflow-hidden hover:border-white/20 transition-all duration-500"
+                                    className="overflow-hidden transition-all duration-500 rounded-2xl sm:rounded-3xl"
+                                    style={{
+                                        boxShadow: '0 20px 60px -15px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05)',
+                                        background: 'rgba(255, 255, 255, 0.02)'
+                                    }}
                                 >
-                                    <div className="grid lg:grid-cols-[1fr_400px] gap-6 sm:gap-8 md:gap-10 lg:gap-12 p-6 sm:p-8 md:p-10 lg:p-12">
+                                    <div className="grid lg:grid-cols-[1fr_600px] gap-6 sm:gap-8 md:gap-10 lg:gap-12 p-6 sm:p-8 md:p-10 lg:p-12">
                                         {/* Left Column - Content */}
                                         <div className="flex flex-col space-y-6 sm:space-y-8">
                                             {/* Project Number */}
@@ -276,7 +280,7 @@ export default function ServicesSection() {
                                                                 <div className="text-xs sm:text-sm text-gray-400 mb-2">
                                                                     {result.label}
                                                                 </div>
-                                                                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+                                                                <div className="text-xl sm:text-2xl md:text-2xl font-bold text-white">
                                                                     {result.value}
                                                                 </div>
                                                             </motion.div>
@@ -286,54 +290,23 @@ export default function ServicesSection() {
                                             )}
                                         </div>
 
-                                        {/* Right Column - iPhone Mockup with Case Study Image */}
+                                        {/* Right Column - Case Study Image */}
                                         {service.hasImage && service.image && (
-  <motion.div
-    className="flex items-center justify-center lg:justify-end"
-    initial={{ opacity: 0, x: 30 }}
-    animate={visibleItems.has(index) ? { opacity: 1, x: 0 } : {}}
-    transition={{ duration: 0.6, delay: 0.2 }}
-  >
-    {/* Phone Wrapper */}
-    <div className="relative w-full max-w-[320px] sm:max-w-[360px] md:max-w-[400px]">
-  
-  {/* Screen image (INSIDE phone) */}
-  <div
-  className="absolute z-10 overflow-hidden"
-  style={{
-    top: "10%",
-    left: "30%",
-    width: "43%",
-    height: "80%",
-    borderRadius: "24px",
-
-    transform: `
-      perspective(1200px)
-      rotateZ(13deg)
-      rotateY(13deg)
-      rotateX(-6deg)
-      skewY(-2deg)
-    `,
-    transformOrigin: "center center",
-  }}
->
-  <img
-    src={service.image}
-    alt={service.title}
-    className="w-full h-full object-cover"
-  />
-</div>
-
-  {/* iPhone frame (ALWAYS on top) */}
-  <img
-    src="/image/iphone.png"
-    alt="iPhone frame"
-    className="relative z-30 w-full h-auto pointer-events-none select-none"
-    draggable={false}
-  />
-</div>
-  </motion.div>
-)}
+                                            <motion.div
+                                                className="flex lg:justify-end h-full"
+                                                initial={{ opacity: 0, x: 30 }}
+                                                animate={visibleItems.has(index) ? { opacity: 1, x: 0 } : {}}
+                                                transition={{ duration: 0.6, delay: 0.2 }}
+                                            >
+                                                <div className="relative w-full">
+                                                    <img
+                                                        src={service.image}
+                                                        alt={service.title}
+                                                        className="w-full h-auto object-contain"
+                                                    />
+                                                </div>
+                                            </motion.div>
+                                        )}
                                     </div>
                                 </motion.div>
                             )
