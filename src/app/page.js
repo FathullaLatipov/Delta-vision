@@ -15,7 +15,7 @@ export default function HomePage() {
     return (
        <>
            <Navbar />
-           <div className="relative text-white min-h-screen bg-fixed overflow-hidden">
+           <div className="relative text-white min-h-screen bg-fixed overflow-x-hidden overflow-y-visible">
                {/* Animated background gradient */}
                <div className="fixed inset-0 bg-gradient-to-b from-[#0a0a0f] via-[#1a1a2e] to-[#0f0f1e] pointer-events-none"></div>
                <div className="fixed inset-0 bg-gradient-radial opacity-30 pointer-events-none"></div>

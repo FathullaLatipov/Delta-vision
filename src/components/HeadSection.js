@@ -15,21 +15,18 @@ export const HeadSection = () => {
             {/* Hero Section */}
             <main className="relative">
                 <div className="absolute inset-0 overflow-hidden">
-                    {/* Hero background image with parallax effect */}
-                    <motion.div
+                    {/* Hero background image - simplified on mobile */}
+                    {/* <div
                         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50"
                         style={{
                             backgroundImage: `url('/image/hero-bg.png')`,
                         }}
-                        initial={{ scale: 1.1 }}
-                        animate={{ scale: 1 }}
-                        transition={{ duration: 1.5, ease: "easeOut" }}
-                    ></motion.div>
+                    ></div> */}
                     {/* Gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/80"></div>
-                    {/* Animated gradient orb */}
+                    {/* Animated gradient orb - disabled on mobile for performance */}
                     <motion.div
-                        className="absolute top-1/4 right-1/4 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-gradient-radial opacity-20 sm:opacity-30 blur-3xl"
+                        className="absolute top-1/4 right-1/4 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-gradient-radial opacity-20 sm:opacity-30 blur-3xl hidden sm:block"
                         animate={{
                             scale: [1, 1.2, 1],
                             opacity: [0.2, 0.4, 0.2],
@@ -91,7 +88,7 @@ export const HeadSection = () => {
                                     className="bg-white text-black hover:bg-white/90 w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg font-semibold rounded-full cursor-pointer shadow-glow hover:shadow-glow-lg transition-all duration-300 group"
                                 >
                                     <span className="hidden sm:inline">Получить коммерческое предложение</span>
-                                    <span className="sm:hidden">Коммерческое предложение</span>
+                                    <span className="sm:hidden">Получить коммерческое предложение</span>
                                     <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                                 </Button>
                             </motion.a>

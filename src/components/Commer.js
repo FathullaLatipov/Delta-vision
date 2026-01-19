@@ -77,7 +77,7 @@ const SectionComponent = () => {
                         >
                             <Sparkles className="mr-2 h-4 w-4" />
                             <span className="hidden sm:inline">Получить коммерческое предложение</span>
-                            <span className="sm:hidden">Коммерческое предложение</span>
+                            <span className="sm:hidden">Получить Коммерческое предложение</span>
                         </Button>
                     </motion.a>
                 </motion.div>

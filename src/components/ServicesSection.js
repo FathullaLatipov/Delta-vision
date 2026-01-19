@@ -1,15 +1,38 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
+import Image from "next/image"
 import ModalForm from "@/components/modals/ModalForm"
 
 export default function ServicesSection() {
     const [visibleItems, setVisibleItems] = useState(new Set())
     const [selectedType, setSelectedType] = useState("SMM & Content Marketing") // Default selected type
+    const [isMobile, setIsMobile] = useState(false)
     const itemRefs = useRef([])
 
     useEffect(() => {
+        // Check if mobile on mount and resize
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768)
+        }
+        checkMobile()
+        window.addEventListener('resize', checkMobile)
+        return () => window.removeEventListener('resize', checkMobile)
+    }, [])
+
+    useEffect(() => {
+        // Disable animations on mobile for better performance
+        if (isMobile) {
+            // On mobile, show all items immediately without animation
+            const allIndices = new Set()
+            itemRefs.current.forEach((_, idx) => {
+                if (itemRefs.current[idx]) allIndices.add(idx)
+            })
+            setVisibleItems(allIndices)
+            return
+        }
+
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -21,7 +44,7 @@ export default function ServicesSection() {
                     }
                 })
             },
-            { threshold: 0.1, rootMargin: "50px" },
+            { threshold: 0.05, rootMargin: "100px" },
         )
 
         itemRefs.current.forEach((ref) => {
@@ -29,7 +52,7 @@ export default function ServicesSection() {
         })
 
         return () => observer.disconnect()
-    }, [selectedType]) // Re-run effect when selectedType changes to observe new items
+    }, [selectedType, isMobile]) // Re-run effect when selectedType changes to observe new items
 
     const [caseModalOpen, setCaseModalOpen] = useState(false)
 
@@ -167,13 +190,7 @@ export default function ServicesSection() {
             
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header */}
-                <motion.div 
-                    className="mb-6 sm:mb-8 md:mb-12"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                >
+                <div className="mb-6 sm:mb-8 md:mb-12">
                     <p className="text-gray-400 text-xs sm:text-sm font-medium tracking-wider uppercase mb-3 sm:mb-4 md:mb-6">Кейсы</p>
                     <div className='md:flex justify-between items-start'>
                         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight max-w-4xl mb-4 sm:mb-6 md:mb-0">
@@ -188,8 +205,6 @@ export default function ServicesSection() {
                                         : "glass text-gray-300 border border-white/10 hover:border-white/20"
                                 }`}
                                 onClick={() => setSelectedType("SMM & Content Marketing")}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
                             >
                                 <span className="hidden sm:inline">SMM & Контент-маркетинг</span>
                                 <span className="sm:hidden">SMM & Контент</span>
@@ -202,33 +217,29 @@ export default function ServicesSection() {
                                         : "glass text-gray-300 border border-white/10 hover:border-white/20"
                                 }`}
                                 onClick={() => setSelectedType("Contextual Advertising")}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
                             >
                                 Контекстная реклама
                             </motion.button>
                         </div>
                     </div>
-                </motion.div>
+                </div>
 
                 {/* Cases List */}
                 <div className="space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16">
-                    <AnimatePresence mode="wait">
-                        {services.map((service, index) => {
-                            return (
-                                <motion.div
-                                    key={`${selectedType}-${service.number}`}
-                                    ref={(el) => (itemRefs.current[index] = el)}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : {}}
-                                    exit={{ opacity: 0, y: -30 }}
-                                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                                    className="overflow-hidden transition-all duration-500 rounded-2xl sm:rounded-3xl"
-                                    style={{
-                                        boxShadow: '0 20px 60px -15px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05)',
-                                        background: 'rgba(255, 255, 255, 0.02)'
-                                    }}
-                                >
+                    {services.map((service, index) => {
+                        return (
+                            <motion.div
+                                key={`${selectedType}-${service.number}`}
+                                ref={(el) => (itemRefs.current[index] = el)}
+                                initial={isMobile ? { opacity: 1 } : { opacity: 0, y: 30 }}
+                                animate={isMobile || visibleItems.has(index) ? { opacity: 1, y: 0 } : {}}
+                                transition={isMobile ? {} : { duration: 0.4, delay: index * 0.05 }}
+                                className="overflow-hidden transition-all duration-300 rounded-2xl sm:rounded-3xl"
+                                style={{
+                                    boxShadow: '0 20px 60px -15px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05)',
+                                    background: 'rgba(255, 255, 255, 0.02)'
+                                }}
+                            >
                                     <div className="grid lg:grid-cols-[1fr_600px] gap-6 sm:gap-8 md:gap-10 lg:gap-12 p-6 sm:p-8 md:p-10 lg:p-12">
                                         {/* Left Column - Content */}
                                         <div className="flex flex-col space-y-6 sm:space-y-8">
@@ -269,12 +280,9 @@ export default function ServicesSection() {
                                                     </h4>
                                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                                                         {service.results.map((result, idx) => (
-                                                            <motion.div
+                                                            <div
                                                                 key={idx}
                                                                 className="glass-strong border border-white/10 rounded-xl p-4 sm:p-5 hover:border-white/20 transition-all duration-300"
-                                                                initial={{ opacity: 0, scale: 0.95 }}
-                                                                animate={visibleItems.has(index) ? { opacity: 1, scale: 1 } : {}}
-                                                                transition={{ delay: 0.3 + idx * 0.05 }}
                                                             >
                                                                 <div className="text-xs sm:text-sm text-gray-400 mb-2">
                                                                     {result.label}
@@ -282,22 +290,17 @@ export default function ServicesSection() {
                                                                 <div className="text-xl sm:text-2xl md:text-2xl font-bold text-white">
                                                                     {result.value}
                                                                 </div>
-                                                            </motion.div>
+                                                            </div>
                                                         ))}
                                                     </div>
                                                 </div>
                                             )}
 
                                             {/* Подробнее Button */}
-                                            <motion.div
-                                                initial={{ opacity: 0, y: 20 }}
-                                                animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : {}}
-                                                transition={{ delay: 0.5 }}
-                                                className="pt-2"
-                                            >
+                                            <div className="pt-2">
                                                 <button
                                                     onClick={() => setCaseModalOpen(true)}
-                                                    className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-white font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 min-h-[48px]"
+                                                    className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-white font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-300 min-h-[48px]"
                                                     style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
                                                     data-gtm-button={`details_case_${service.number}`}
                                                     data-gtm-location="services_section"
@@ -306,33 +309,30 @@ export default function ServicesSection() {
                                                 >
                                                     Подробнее
                                                 </button>
-                                            </motion.div>
+                                            </div>
                                         </div>
 
                                         {/* Right Column - Case Study Image */}
                                         {service.hasImage && service.image && (
-                                            <motion.div
-                                                className="flex lg:justify-end h-full"
-                                                initial={{ opacity: 0, x: 30 }}
-                                                animate={visibleItems.has(index) ? { opacity: 1, x: 0 } : {}}
-                                                transition={{ duration: 0.6, delay: 0.2 }}
-                                            >
+                                            <div className="flex lg:justify-end h-full">
                                                 <div className="relative w-full">
-                                                    <img
+                                                    <Image
                                                         src={service.image}
                                                         alt={service.title}
+                                                        width={800}
+                                                        height={600}
                                                         className="w-full h-auto object-contain"
                                                         loading="lazy"
-                                                        decoding="async"
+                                                        quality={85}
+                                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 600px, 800px"
                                                     />
                                                 </div>
-                                            </motion.div>
+                                            </div>
                                         )}
                                     </div>
                                 </motion.div>
                             )
                         })}
-                    </AnimatePresence>
                 </div>
             </div>
             <ModalForm isOpen={caseModalOpen} setIsOpen={setCaseModalOpen} />

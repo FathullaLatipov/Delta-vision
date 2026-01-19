@@ -7,11 +7,11 @@ import { CheckCircle, MessageCircle, Phone, X } from "lucide-react"
 export default function ThankYouPage({ onClose }) {
     const handleTelegramClick = () => {
         // 🔗 Sizning haqiqiy Telegram username yoki guruh linkini qo'ying
-        window.open("https://t.me/yourusername", "_blank")
+        window.open("https://t.me/islamzaripov", "_blank")
     }
 
     const handleCallClick = () => {
-        window.open("tel:+79991234567", "_self")
+        window.open("tel:+998200007934", "_self")
     }
 
     return (
@@ -70,10 +70,10 @@ export default function ThankYouPage({ onClose }) {
                         </Button>
                     </div>
 
-                    <div className="text-xs sm:text-sm text-white/60 pt-4 sm:pt-5 border-t border-white/20 space-y-1">
+                    {/* <div className="text-xs sm:text-sm text-white/60 pt-4 sm:pt-5 border-t border-white/20 space-y-1">
                         <p>Рабочие часы: Пн-Пт 9:00-18:00 (МСК)</p>
                         <p>Выходные: Сб-Вс 10:00-16:00 (МСК)</p>
-                    </div>
+                    </div> */}
                 </CardContent>
             </Card>
         </div>

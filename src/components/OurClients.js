@@ -83,7 +83,7 @@ const companies = [
 
 export default function CompanyLogos() {
     return (
-        <section className="py-10 sm:py-12 md:py-16 relative overflow-hidden">
+        <section className="py-10 sm:py-12 md:py-16 pb-20 sm:pb-24 md:pb-16 relative">
             {/* Background gradient */}
             <div className="absolute inset-0 bg-gradient-radial opacity-10 pointer-events-none"></div>
             
@@ -105,29 +105,24 @@ export default function CompanyLogos() {
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-6 place-items-center">
                     {companies.map((company, index) => (
-                        <motion.div
+                        <div
                             key={company.id}
-                            className="rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 lg:p-6 shadow-glow cursor-pointer group flex items-center justify-center border border-white/10 hover:border-white/20 transition-all duration-300 hover-lift w-full aspect-square"
+                            className="rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 lg:p-6 shadow-glow cursor-pointer group flex items-center justify-center border border-white/10 hover:border-white/20 transition-all duration-300 w-full aspect-square"
                             style={{ backgroundColor: '#f4f4f6' }}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.05, duration: 0.4 }}
-                            whileHover={{ scale: 1.05, y: -3 }}
                         >
                             <div className="relative h-20 sm:h-24 md:h-28 lg:h-32 w-full flex items-center justify-center">
                                 <Image
                                     src={company.logo || "/placeholder.svg"}
                                     alt={company.name}
-                                    width={300}
-                                    height={200}
+                                    width={200}
+                                    height={120}
                                     loading="lazy"
-                                    className="max-w-full max-h-full object-contain transition-all duration-500
-                   filter grayscale opacity-60
-                   group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110"
+                                    quality={80}
+                                    className="max-w-full max-h-full object-contain"
+                                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
                                 />
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

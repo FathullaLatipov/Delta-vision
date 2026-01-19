@@ -94,7 +94,7 @@ export default function AuditFormBlock() {
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.3 }}
                             >
-                                Проведём <span className="font-bold text-white gradient-text-accent">БЕСПЛАТНЫЙ</span> аудит сайта и выявим проблемы на всех этапах формирования спроса у потребителя.
+                                Проведём <span className="font-bold text-white gradient-text-accent">БЕСПЛАТНЫЙ</span> аудит Вашего бизнеса и выявим проблемы на всех этапах формирования спроса у потребителя.
                             </motion.p>
 
                             {/* Form */}
