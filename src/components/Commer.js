@@ -59,16 +59,27 @@ const SectionComponent = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.6 }}
                 >
-                    <Button
-                        variant="dark"
-                        className="rounded-full py-4 sm:py-5 md:py-6 px-6 sm:px-8 cursor-pointer shadow-glow hover:shadow-glow-lg transition-all duration-300 hover-lift w-full sm:w-auto text-sm sm:text-base md:text-lg min-h-[48px]"
-                        style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
-                        // onClick={() => setIsOpen(true)}
+                    <motion.a
+                        href="/image/DELTA_VISION_COMMERCIAL.pdf"
+                        download="DELTA_VISION_COMMERCIAL.pdf"
+                        className="w-full sm:w-auto"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        data-gtm-button="pdf_download_commer_section"
+                        data-gtm-location="commer_section"
+                        data-gtm-action="download_pdf"
+                        data-gtm-pdf-name="DELTA_VISION_COMMERCIAL.pdf"
                     >
-                        <Sparkles className="mr-2 h-4 w-4" />
-                        <span onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>Получить коммерческое предложение</span>
-                        <span className="sm:hidden">Коммерческое предложение</span>
-                    </Button>
+                        <Button
+                            variant="dark"
+                            className="rounded-full py-4 sm:py-5 md:py-6 px-6 sm:px-8 cursor-pointer shadow-glow hover:shadow-glow-lg transition-all duration-300 hover-lift w-full sm:w-auto text-sm sm:text-base md:text-lg min-h-[48px]"
+                            style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
+                        >
+                            <Sparkles className="mr-2 h-4 w-4" />
+                            <span className="hidden sm:inline">Получить коммерческое предложение</span>
+                            <span className="sm:hidden">Коммерческое предложение</span>
+                        </Button>
+                    </motion.a>
                 </motion.div>
             </div>
             <motion.div 

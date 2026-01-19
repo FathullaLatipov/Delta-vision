@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import {Button} from "@/components/ui/button";
+import ErrorModal from "./modals/ErrorModal";
 
 
 export default function AuditFormBlock() {
@@ -15,6 +16,7 @@ export default function AuditFormBlock() {
 
     const [loading, setLoading] = useState(false)
     const [sent, setSent] = useState(false)
+    const [showErrorModal, setShowErrorModal] = useState(false)
 
     const handleInputChange = (e) => {
         const { name, value } = e.target
@@ -53,7 +55,7 @@ export default function AuditFormBlock() {
             setFormData({ name: "", phone: "", telegram: "", website: "" })
         } catch (err) {
             console.error(err)
-            alert("❌ Произошла ошибка. Повторите попытку позже.")
+            setShowErrorModal(true)
         } finally {
             setLoading(false)
         }
@@ -195,6 +197,10 @@ export default function AuditFormBlock() {
                                         disabled={loading}
                                         className="w-full rounded-lg sm:rounded-xl py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg font-semibold shadow-glow hover:shadow-glow-lg transition-all duration-300 hover-lift min-h-[48px]"
                                         style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
+                                        data-gtm-button="submit_audit_form"
+                                        data-gtm-location="contact_section"
+                                        data-gtm-action="submit_form"
+                                        data-gtm-form-name="audit_form"
                                     >
                                         {loading ? "Отправка..." : "ЗАКАЗАТЬ АУДИТ"}
                                     </Button>
@@ -219,6 +225,11 @@ export default function AuditFormBlock() {
                     </div>
                 </motion.div>
             </div>
+            <ErrorModal 
+                isOpen={showErrorModal} 
+                onClose={() => setShowErrorModal(false)}
+                message="❌ Произошла ошибка. Повторите попытку позже."
+            />
         </section>
     )
 }

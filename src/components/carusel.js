@@ -17,10 +17,11 @@ const logos = [
 
 export const ClientLogos = () => {
     return (
-        <div className="relative z-10 px-3 sm:px-4 md:px-6 pb-12 sm:pb-16 md:pb-20">
-            <div className="mx-auto max-w-full">
+        <div className="relative z-10">
+            <div className="w-full">
                 <motion.div 
-                    className="flex items-center justify-center gap-6 sm:gap-8 md:gap-12 flex-wrap"
+                    className="flex items-center justify-center gap-6 sm:gap-8 md:gap-12 flex-wrap py-8 sm:py-10 md:py-12 px-3 sm:px-4 md:px-6"
+                    style={{ backgroundColor: '#f4f4f6', width: '100%' }}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}

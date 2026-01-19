@@ -91,7 +91,7 @@ export default function Footer() {
                         {/* Action Buttons */}
                         <div className="flex flex-col gap-2 sm:gap-3 mt-4 sm:mt-6">
                             <motion.a
-                                href="https://t.me/islamzaripov24"
+                                href="https://t.me/islamzaripov"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-4 sm:px-6 py-3 bg-gradient-premium text-white rounded-full text-center font-semibold shadow-glow hover:shadow-glow-lg transition-all duration-300 min-h-[48px] flex items-center justify-center text-sm sm:text-base"
@@ -102,6 +102,9 @@ export default function Footer() {
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.3 }}
                                 style={{ backgroundColor: "oklch(0.546 0.245 262.881)" }}
+                                data-gtm-button="telegram_footer"
+                                data-gtm-location="footer"
+                                data-gtm-action="open_telegram"
                             >
                                 НАПИСАТЬ В ТЕЛЕГРАМ
                             </motion.a>
@@ -114,6 +117,9 @@ export default function Footer() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.4 }}
+                                data-gtm-button="phone_footer"
+                                data-gtm-location="footer"
+                                data-gtm-action="call"
                             >
                                 ПОЗВОНИТЬ
                             </motion.a>

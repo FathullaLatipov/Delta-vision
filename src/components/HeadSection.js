@@ -77,10 +77,15 @@ export const HeadSection = () => {
                             transition={{ duration: 0.8, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
                         >
                             <motion.a
-                                href="#contact"
+                                href="/image/DELTA_VISION_COMMERCIAL.pdf"
+                                download="DELTA_VISION_COMMERCIAL.pdf"
                                 className='cursor-pointer group w-full sm:w-auto'
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
+                                data-gtm-button="pdf_download_head_section"
+                                data-gtm-location="head_section"
+                                data-gtm-action="download_pdf"
+                                data-gtm-pdf-name="DELTA_VISION_COMMERCIAL.pdf"
                             >
                                 <Button
                                     className="bg-white text-black hover:bg-white/90 w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg font-semibold rounded-full cursor-pointer shadow-glow hover:shadow-glow-lg transition-all duration-300 group"
@@ -91,10 +96,16 @@ export const HeadSection = () => {
                                 </Button>
                             </motion.a>
 
-                            <motion.div
+                            <motion.a
+                                href="https://t.me/islamzaripov"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="w-full sm:w-auto"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
+                                data-gtm-button="telegram_head_section"
+                                data-gtm-location="head_section"
+                                data-gtm-action="open_telegram"
                             >
                                 <Button
                                     variant='dark'
@@ -104,7 +115,7 @@ export const HeadSection = () => {
                                     Заказать экспертный аудит
                                     <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                                 </Button>
-                            </motion.div>
+                            </motion.a>
                         </motion.div>
                     </div>
                 </div>

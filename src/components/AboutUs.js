@@ -180,6 +180,9 @@ export default function AboutUs() {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                        data-gtm-button="unit_economy_calculation"
+                        data-gtm-location="about_us_section"
+                        data-gtm-action="scroll_to_contact"
                     >
                         <span className="hidden sm:inline">РАССЧИТАТЬ UNIT-ЭКОНОМИКУ ПРОЕКТА</span>
                         <span className="sm:hidden">UNIT-ЭКОНОМИКА</span>

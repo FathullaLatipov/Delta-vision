@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { X } from "lucide-react"
 import ThankYouPage from "./ThankYouPage"
+import ErrorModal from "./ErrorModal"
 import { sendToTelegram } from "/src/components/utilis/sendToTelegram"
 
 export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExternalIsOpen }) {
@@ -19,6 +20,7 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
         phone: "",
     })
     const [showThankYou, setShowThankYou] = useState(false)
+    const [showErrorModal, setShowErrorModal] = useState(false)
 
     const totalSteps = 4
     const progress = Math.round((step / totalSteps) * 100)
@@ -83,7 +85,7 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
         if (success) {
             setShowThankYou(true)
         } else {
-            alert("Ошибка при отправке ❌")
+            setShowErrorModal(true)
         }
     }
 
@@ -345,6 +347,10 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                                     disabled={!answers.name || !answers.phone}
                                     className="rounded-xl cursor-pointer min-h-[48px] px-6 sm:px-8 text-sm sm:text-base font-semibold flex-1 disabled:opacity-50 disabled:cursor-not-allowed"
                                     style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
+                                    data-gtm-button="submit_quiz_modal"
+                                    data-gtm-location="quiz_modal"
+                                    data-gtm-action="submit_form"
+                                    data-gtm-form-name="quiz_form"
                                 >
                                     Отправить
                                 </Button>
@@ -366,6 +372,11 @@ export default function QuizModal({ isOpen: externalIsOpen, setIsOpen: setExtern
                     </div>
                 </CardContent>
             </Card>
+            <ErrorModal 
+                isOpen={showErrorModal} 
+                onClose={() => setShowErrorModal(false)}
+                message="Ошибка при отправке ❌"
+            />
         </div>
     )
 }

@@ -287,6 +287,26 @@ export default function ServicesSection() {
                                                     </div>
                                                 </div>
                                             )}
+
+                                            {/* Подробнее Button */}
+                                            <motion.div
+                                                initial={{ opacity: 0, y: 20 }}
+                                                animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : {}}
+                                                transition={{ delay: 0.5 }}
+                                                className="pt-2"
+                                            >
+                                                <button
+                                                    onClick={() => setCaseModalOpen(true)}
+                                                    className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-white font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 min-h-[48px]"
+                                                    style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
+                                                    data-gtm-button={`details_case_${service.number}`}
+                                                    data-gtm-location="services_section"
+                                                    data-gtm-action="open_case_details"
+                                                    data-gtm-case-title={service.title}
+                                                >
+                                                    Подробнее
+                                                </button>
+                                            </motion.div>
                                         </div>
 
                                         {/* Right Column - Case Study Image */}

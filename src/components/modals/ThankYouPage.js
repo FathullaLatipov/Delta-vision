@@ -48,6 +48,9 @@ export default function ThankYouPage({ onClose }) {
                             onClick={handleTelegramClick}
                             className="w-full text-white flex items-center justify-center rounded-xl py-3 sm:py-4 min-h-[48px] font-semibold shadow-lg hover:shadow-xl transition-all"
                             style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
+                            data-gtm-button="telegram_thank_you_page"
+                            data-gtm-location="thank_you_modal"
+                            data-gtm-action="open_telegram"
                         >
                             <MessageCircle className="h-5 w-5 mr-2" />
                             Написать в Телеграм
@@ -58,6 +61,9 @@ export default function ThankYouPage({ onClose }) {
                             variant="select"
                             className="w-full rounded-xl py-3 sm:py-4 min-h-[48px] font-semibold"
                             style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
+                            data-gtm-button="phone_thank_you_page"
+                            data-gtm-location="thank_you_modal"
+                            data-gtm-action="call"
                         >
                             <Phone className="h-5 w-5 mr-2" />
                             Позвонить

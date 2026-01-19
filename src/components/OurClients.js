@@ -37,7 +37,7 @@ const companies = [
     {
         id: 7,
         name: "Лукойл",
-        logo: "/image/clientsLogo/7.png",
+        logo: "/image/clientsLogo/7.jpg",
     },
     {
         id: 8,
@@ -107,7 +107,8 @@ export default function CompanyLogos() {
                     {companies.map((company, index) => (
                         <motion.div
                             key={company.id}
-                            className="glass rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 lg:p-6 shadow-glow cursor-pointer group flex items-center justify-center border border-white/10 hover:border-white/20 transition-all duration-300 hover-lift w-full aspect-square"
+                            className="rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 lg:p-6 shadow-glow cursor-pointer group flex items-center justify-center border border-white/10 hover:border-white/20 transition-all duration-300 hover-lift w-full aspect-square"
+                            style={{ backgroundColor: '#f4f4f6' }}
                             initial={{ opacity: 0, scale: 0.8 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}

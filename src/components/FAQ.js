@@ -145,6 +145,9 @@ export default function FAQ() {
                                 className="rounded-full py-4 sm:py-5 cursor-pointer shadow-glow hover:shadow-glow-lg transition-all duration-300 w-full sm:w-auto text-sm sm:text-base min-h-[48px]"
                                 style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
                                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                                data-gtm-button="consultation_request_faq"
+                                data-gtm-location="faq_section"
+                                data-gtm-action="scroll_to_contact"
                             >
                                 Оставить заявку на консультацию
                             </Button>
