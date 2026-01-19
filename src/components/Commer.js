@@ -63,10 +63,10 @@ const SectionComponent = () => {
                         variant="dark"
                         className="rounded-full py-4 sm:py-5 md:py-6 px-6 sm:px-8 cursor-pointer shadow-glow hover:shadow-glow-lg transition-all duration-300 hover-lift w-full sm:w-auto text-sm sm:text-base md:text-lg min-h-[48px]"
                         style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
-                        onClick={() => setIsOpen(true)}
+                        // onClick={() => setIsOpen(true)}
                     >
                         <Sparkles className="mr-2 h-4 w-4" />
-                        <span className="hidden sm:inline">Получить коммерческое предложение</span>
+                        <span onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>Получить коммерческое предложение</span>
                         <span className="sm:hidden">Коммерческое предложение</span>
                     </Button>
                 </motion.div>
@@ -78,18 +78,6 @@ const SectionComponent = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.3 }}
             >
-                <motion.div
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                >
-                    <Image
-                        src="/image/commer.png"
-                        alt="Professional Image"
-                        width={150}
-                        height={150}
-                        className="w-full h-auto object-cover rounded-xl sm:rounded-2xl shadow-glow-lg"
-                    />
-                </motion.div>
             </motion.div>
             <ModalForm isOpen={isOpen} setIsOpen={setIsOpen} />
         </section>

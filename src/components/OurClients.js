@@ -7,22 +7,22 @@ const companies = [
     {
         id: 1,
         name: "Сибирская Генерирующая Компания",
-        logo: "/image/clientsLogo/1.jpg",
+        logo: "/image/clientsLogo/1.png",
     },
     {
         id: 2,
         name: "Газпром",
-        logo: "/image/clientsLogo/2.webp",
+        logo: "/image/clientsLogo/2.png",
     },
     {
         id: 3,
         name: "Лукойл",
-        logo: "/image/clientsLogo/3.jpg",
+        logo: "/image/clientsLogo/3.png",
     },
     {
         id: 4,
         name: "Лукойл",
-        logo: "/image/clientsLogo/4.jpg",
+        logo: "/image/clientsLogo/4.png",
     },
     {
         id: 5,
@@ -32,12 +32,12 @@ const companies = [
     {
         id: 6,
         name: "Лукойл",
-        logo: "/image/clientsLogo/6.jpeg",
+        logo: "/image/clientsLogo/6.png",
     },
     {
         id: 7,
         name: "Лукойл",
-        logo: "/image/clientsLogo/7.jpg",
+        logo: "/image/clientsLogo/7.png",
     },
     {
         id: 8,
@@ -114,12 +114,12 @@ export default function CompanyLogos() {
                             transition={{ delay: index * 0.05, duration: 0.4 }}
                             whileHover={{ scale: 1.05, y: -3 }}
                         >
-                            <div className="relative h-12 sm:h-16 md:h-20 w-full flex items-center justify-center">
+                            <div className="relative h-20 sm:h-24 md:h-28 lg:h-32 w-full flex items-center justify-center">
                                 <Image
                                     src={company.logo || "/placeholder.svg"}
                                     alt={company.name}
-                                    width={160}
-                                    height={80}
+                                    width={300}
+                                    height={200}
                                     loading="lazy"
                                     className="max-w-full max-h-full object-contain transition-all duration-500
                    filter grayscale opacity-60
