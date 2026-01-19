@@ -92,7 +92,7 @@ export const Navbar = () => {
                     <Button
                         variant="dark"
                         className="rounded-full py-5 cursor-pointer hover-lift shadow-glow hover:shadow-glow-lg transition-all duration-300"
-                        onClick={() => window.open('https://t.me/islamzaripov24', '_blank')}
+                        onClick={() => window.open('https://t.me/islamzaripov', '_blank')}
                         data-gtm-button="telegram_navbar_desktop"
                         data-gtm-location="navbar"
                         data-gtm-action="open_telegram"
@@ -123,7 +123,7 @@ export const Navbar = () => {
                     
                     {/* Telegram icon */}
                     <motion.button
-                        onClick={() => window.open('https://t.me/islamzaripov24', '_blank')}
+                        onClick={() => window.open('https://t.me/islamzaripov', '_blank')}
                         className="p-2 rounded-lg text-white glass border border-white/20 transition-all duration-300"
                         whileTap={{ scale: 0.95 }}
                         whileHover={{ scale: 1.05 }}
@@ -195,7 +195,7 @@ export const Navbar = () => {
                                 variant="dark"
                                 className="rounded-full py-4 sm:py-5 cursor-pointer w-full shadow-glow hover:shadow-glow-lg transition-all duration-300 text-sm sm:text-base min-h-[48px]"
                                 onClick={() => {
-                                    window.open('https://t.me/islamzaripov24', '_blank')
+                                    window.open('https://t.me/islamzaripov', '_blank')
                                     setMenuOpen(false)
                                 }}
                             >

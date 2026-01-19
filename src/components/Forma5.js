@@ -85,7 +85,7 @@ export default function AuditFormBlock() {
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2 }}
                             >
-                                ВКЛАДЫВАЕТЕ ДЕНЬГИ В САЙТ, НО У ВАС НЕТ ПРОДАЖ?
+                                ВКЛАДЫВАЕТЕ ДЕНЬГИ В РЕКЛАМУ, НО У ВАС НЕТ ПРОДАЖ?
                             </motion.p>
                             <motion.p 
                                 className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed"

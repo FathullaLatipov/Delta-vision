@@ -185,7 +185,7 @@ export default function AboutUs() {
                         data-gtm-action="scroll_to_contact"
                     >
                         <span className="hidden sm:inline">РАССЧИТАТЬ UNIT-ЭКОНОМИКУ ПРОЕКТА</span>
-                        <span className="sm:hidden">UNIT-ЭКОНОМИКА</span>
+                        <span className="sm:hidden">РАССЧИТАТЬ UNIT-ЭКОНОМИКУ ПРОЕКТА</span>
                     </motion.button>
                 </motion.div>
             </div>
