@@ -81,18 +81,18 @@ export const Navbar = () => {
                     transition={{ delay: 0.3, duration: 0.4 }}
                 >
                     <a 
-                        href="tel:+998200007934" 
+                        href="tel:+998771630475" 
                         className="text-white hover:text-primary transition-colors font-medium"
                         data-gtm-button="phone_navbar_desktop"
                         data-gtm-location="navbar"
                         data-gtm-action="call"
                     >
-                        +998 20 000 79 34
+                        +998 77 163 04 75
                     </a>
                     <Button
                         variant="dark"
                         className="rounded-full py-5 cursor-pointer hover-lift shadow-glow hover:shadow-glow-lg transition-all duration-300"
-                        onClick={() => window.open('https://t.me/islamzaripov', '_blank')}
+                        onClick={() => window.open('https://t.me/deltavison', '_blank')}
                         data-gtm-button="telegram_navbar_desktop"
                         data-gtm-location="navbar"
                         data-gtm-action="open_telegram"
@@ -108,7 +108,7 @@ export const Navbar = () => {
                 <div className="md:hidden flex items-center gap-2">
                     {/* Phone icon */}
                     <motion.a
-                        href="tel:+998200007934"
+                        href="tel:+998771630475"
                         className="p-2 rounded-lg text-white glass border border-white/20 transition-all duration-300"
                         whileTap={{ scale: 0.95 }}
                         whileHover={{ scale: 1.05 }}
@@ -123,7 +123,7 @@ export const Navbar = () => {
                     
                     {/* Telegram icon */}
                     <motion.button
-                        onClick={() => window.open('https://t.me/islamzaripov', '_blank')}
+                        onClick={() => window.open('https://t.me/deltavison', '_blank')}
                         className="p-2 rounded-lg text-white glass border border-white/20 transition-all duration-300"
                         whileTap={{ scale: 0.95 }}
                         whileHover={{ scale: 1.05 }}
@@ -186,16 +186,16 @@ export const Navbar = () => {
                             className="space-y-3"
                         >
                             <a 
-                                href="tel:+998200007934" 
+                                href="tel:+998771630475" 
                                 className="block text-white hover:text-primary transition-colors font-medium text-center py-3 sm:py-2 min-h-[44px] flex items-center justify-center"
                             >
-                                +998 20 000 79 34
+                                +998 77 163 04 75
                             </a>
                             <Button
                                 variant="dark"
                                 className="rounded-full py-4 sm:py-5 cursor-pointer w-full shadow-glow hover:shadow-glow-lg transition-all duration-300 text-sm sm:text-base min-h-[48px]"
                                 onClick={() => {
-                                    window.open('https://t.me/islamzaripov', '_blank')
+                                    window.open('https://t.me/deltavison', '_blank')
                                     setMenuOpen(false)
                                 }}
                             >

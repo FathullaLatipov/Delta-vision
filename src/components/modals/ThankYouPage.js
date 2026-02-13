@@ -7,11 +7,11 @@ import { CheckCircle, MessageCircle, Phone, X } from "lucide-react"
 export default function ThankYouPage({ onClose }) {
     const handleTelegramClick = () => {
         // 🔗 Sizning haqiqiy Telegram username yoki guruh linkini qo'ying
-        window.open("https://t.me/islamzaripov", "_blank")
+        window.open("https://t.me/deltavison", "_blank")
     }
 
     const handleCallClick = () => {
-        window.open("tel:+998200007934", "_self")
+        window.open("tel:+998771630475", "_self")
     }
 
     return (

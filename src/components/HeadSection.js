@@ -94,7 +94,7 @@ export const HeadSection = () => {
                             </motion.a>
 
                             <motion.a
-                                href="https://t.me/islamzaripov"
+                                href="https://t.me/deltavison"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-full sm:w-auto"

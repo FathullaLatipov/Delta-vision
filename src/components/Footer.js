@@ -76,8 +76,8 @@ export default function Footer() {
                         <ul className="space-y-2 sm:space-y-3">
                             <li className="flex items-center gap-2 min-h-[32px]">
                                 <FaPhoneAlt className="text-primary text-sm sm:text-base flex-shrink-0" />
-                                <a href="tel:+998200007934" className="text-gray-400 hover:text-white transition-all duration-300 text-sm sm:text-base break-all">
-                                    +998 20 000 79 34
+                                <a href="tel:+998771630475" className="text-gray-400 hover:text-white transition-all duration-300 text-sm sm:text-base break-all">
+                                    +998 77 163 04 75
                                 </a>
                             </li>
                             <li className="flex items-center gap-2 min-h-[32px]">
@@ -91,7 +91,7 @@ export default function Footer() {
                         {/* Action Buttons */}
                         <div className="flex flex-col gap-2 sm:gap-3 mt-4 sm:mt-6">
                             <motion.a
-                                href="https://t.me/islamzaripov"
+                                href="https://t.me/deltavison"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="px-4 sm:px-6 py-3 bg-gradient-premium text-white rounded-full text-center font-semibold shadow-glow hover:shadow-glow-lg transition-all duration-300 min-h-[48px] flex items-center justify-center text-sm sm:text-base"
@@ -109,7 +109,7 @@ export default function Footer() {
                                 НАПИСАТЬ В ТЕЛЕГРАМ
                             </motion.a>
                             <motion.a
-                                href="tel:+998200007934"
+                                href="tel:+998771630475"
                                 className="px-4 sm:px-6 py-3 bg-white text-black rounded-full text-center font-semibold shadow-glow hover:shadow-glow-lg transition-all duration-300 min-h-[48px] flex items-center justify-center text-sm sm:text-base"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
