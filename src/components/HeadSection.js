@@ -48,23 +48,27 @@ export const HeadSection = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
                         >
-                            SMM. Реклама в <span className="inline-block">
-                                <span style={{ color: '#4285F4' }}>G</span>
-                                <span style={{ color: '#EA4335' }}>O</span>
-                                <span style={{ color: '#FBBC05' }}>O</span>
-                                <span style={{ color: '#4285F4' }}>G</span>
-                                <span style={{ color: '#34A853' }}>L</span>
-                                <span style={{ color: '#EA4335' }}>E</span>
-                            </span> и <span><span style={{ color: '#FC3F1D' }}>Y</span><span style={{ color: '#ffffff' }}>ANDEX</span></span>
+                            Увеличим поток клиентов на{" "}
+                            <span className="text-white font-semibold">38%</span> за{" "}
+                            <span className="text-white font-semibold">10 дней</span>
                         </motion.h1>
 
                         <motion.p 
-                            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-300 font-sans max-w-2xl mx-auto mb-6 sm:mb-8 md:mb-12 leading-relaxed px-4"
+                            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-300 font-sans max-w-2xl mx-auto mb-4 sm:mb-6 md:mb-8 leading-relaxed px-4"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
                         >
                             Запустим Ваш проект за <span className="text-white font-semibold">7 дней</span>. Привлекаем качественных лидов для увеличения продаж. Качественные клиенты с Таргетированной и Контекстной рекламы.
+                        </motion.p>
+
+                        <motion.p 
+                            className="text-sm sm:text-base md:text-lg text-gray-400 font-sans max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-12 leading-relaxed px-4"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                        >
+                            Мы настроим идеальную рекламу в Google и Яндекс, поднимем ваши позиции, усилим доверие и увеличим звонки и клики до 100% в первый месяц
                         </motion.p>
 
                         <motion.div 
