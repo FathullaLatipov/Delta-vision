@@ -40,68 +40,59 @@ export const HeadSection = () => {
                 </div>
 
                 {/* Hero Content */}
-                <div className="relative z-10 px-4 sm:px-6 py-12 sm:py-16 md:py-24 lg:py-32 pt-24 sm:pt-28 md:pt-32">
-                    <div className="mx-auto max-w-4xl text-center">
+                <div className="relative z-10 px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-24 pt-24 sm:pt-28 md:pt-32">
+                    <div className="mx-auto max-w-7xl">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
+                            <div className="text-left max-w-xl">
                         <motion.h1 
-                            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-sans leading-tight mb-4 sm:mb-6 md:mb-8 px-2"
+                            className="text-4xl sm:text-5xl md:text-6xl font-bold font-sans leading-[1.05] mb-6 sm:mb-7"
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
                         >
-                            Увеличим поток клиентов на{" "}
-                            <span className="text-white font-semibold">38%</span> за{" "}
-                            <span className="text-white font-semibold">10 дней</span>
+                            Увеличим поток
+                            <br />
+                            клиентов <span className="text-emerald-400">на 38%</span>
+                            <br />
+                            за 10 дней
                         </motion.h1>
 
                         <motion.p 
-                            className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-300 font-sans max-w-2xl mx-auto mb-4 sm:mb-6 md:mb-8 leading-relaxed px-4"
+                            className="text-base sm:text-lg text-gray-300 font-sans mb-8 sm:mb-10 leading-relaxed"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
                         >
-                            Запустим Ваш проект за <span className="text-white font-semibold">7 дней</span>. Привлекаем качественных лидов для увеличения продаж. Качественные клиенты с Таргетированной и Контекстной рекламы.
+                            Мы настроим идеальную рекламу в Google и Яндекс, поднимем ваши позиции, усилим доверие и увеличим звонки и клики до 100% в первый месяц
                         </motion.p>
 
-                        <motion.p 
-                            className="text-sm sm:text-base md:text-lg text-gray-400 font-sans max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-12 leading-relaxed px-4"
+                        <motion.div
+                            className="flex flex-wrap gap-3 mb-8"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
                         >
-                            Мы настроим идеальную рекламу в Google и Яндекс, поднимем ваши позиции, усилим доверие и увеличим звонки и клики до 100% в первый месяц
-                        </motion.p>
+                            <div className="px-4 py-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm min-w-[132px]">
+                                <div className="text-3xl font-bold text-white">50+</div>
+                                <div className="text-xs text-gray-400">Успешных проектов</div>
+                            </div>
+                            <div className="px-4 py-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm min-w-[132px]">
+                                <div className="text-3xl font-bold text-white">+30%</div>
+                                <div className="text-xs text-gray-400">Средний рост клиентов</div>
+                            </div>
+                        </motion.div>
 
                         <motion.div 
-                            className="flex flex-col gap-3 sm:gap-4 justify-center items-center px-4"
+                            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-start items-start"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
                         >
                             <motion.a
-                                href="/image/DELTA_VISION_COMMERCIAL.pdf"
-                                download="DELTA_VISION_COMMERCIAL.pdf"
-                                className='cursor-pointer group w-full sm:w-auto'
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                data-gtm-button="pdf_download_head_section"
-                                data-gtm-location="head_section"
-                                data-gtm-action="download_pdf"
-                                data-gtm-pdf-name="DELTA_VISION_COMMERCIAL.pdf"
-                            >
-                                <Button
-                                    className="bg-white text-black hover:bg-white/90 w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg font-semibold rounded-full cursor-pointer shadow-glow hover:shadow-glow-lg transition-all duration-300 group"
-                                >
-                                    <span className="hidden sm:inline">Получить коммерческое предложение</span>
-                                    <span className="sm:hidden">Получить коммерческое предложение</span>
-                                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
-                                </Button>
-                            </motion.a>
-
-                            <motion.a
                                 href="https://t.me/deltavison"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full sm:w-auto"
+                                className='cursor-pointer group w-full sm:w-auto'
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 data-gtm-button="telegram_head_section"
@@ -109,15 +100,35 @@ export const HeadSection = () => {
                                 data-gtm-action="open_telegram"
                             >
                                 <Button
-                                    variant='dark'
-                                    className="w-full sm:w-auto px-6 sm:px-8 py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg font-semibold rounded-full hover-gradient cursor-pointer shadow-glow hover:shadow-glow-lg transition-all duration-300 group"
-                                    style={{ backgroundColor: 'oklch(0.546 0.245 262.881)' }}
+                                    className="bg-white text-black hover:bg-white/90 w-full sm:w-auto px-8 py-6 text-base font-semibold rounded-full cursor-pointer shadow-glow hover:shadow-glow-lg transition-all duration-300 group"
                                 >
-                                    Заказать экспертный аудит
-                                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
+                                    Заказать рекламу
+                                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                                 </Button>
                             </motion.a>
                         </motion.div>
+                            </div>
+
+                            <motion.div
+                                className="relative flex justify-center lg:justify-end"
+                                initial={{ opacity: 0, x: 40 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.9, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+                            >
+                                <img
+                                    src="https://delta-vision-boost.lovable.app/assets/laptop-mockup-CSr-qIxQ.png"
+                                    alt="Google Ads dashboard on laptop"
+                                    className="w-full max-w-[520px] object-contain"
+                                    loading="eager"
+                                />
+                                <div className="absolute -bottom-4 right-0 sm:-right-4 rounded-2xl px-4 py-3 bg-[#101827]/80 border border-white/10 backdrop-blur-md">
+                                    <div className="text-[11px] text-gray-400">Рост конверсии</div>
+                                    <div className="text-xl font-bold text-white">
+                                        <span className="text-emerald-400 text-base mr-1">↑ 24%</span>78
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
                     </div>
                 </div>
 
